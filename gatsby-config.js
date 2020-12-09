@@ -4,15 +4,20 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-theme-ui",
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Josefin Sans`,
-            varients: [`200`, `400`],
-          },
+          `Josefin Sans\:200,400`, // you can also specify font weights and styles
         ],
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
   ],
 };
