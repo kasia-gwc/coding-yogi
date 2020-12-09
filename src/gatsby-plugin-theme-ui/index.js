@@ -6,10 +6,10 @@ const heading = {
 
 export const base = {
     colors: {
-        text: "#000000",
-        background: "#FFFFFF",
-        primary: "#2EC4B6",
-        secondary: "#FF9F1C",
+        text: "000000",
+        background: "FFFFFF",
+        primary: "2EC4B6",
+        secondary: "FF9F1C",
     },
     fonts: {
         body: "Josefin Sans, sans-serif",
