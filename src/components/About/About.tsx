@@ -25,19 +25,19 @@ export const About = (): JSX.Element => {
       <Box
         sx={{
           position: 'absolute',
-          maxWidth: ['35%', 'auto'],
+          maxWidth: ['30%', 'auto'],
           bottom: '18%',
           textAlign: 'center',
           left: ['40%', '10%'],
           p: { color: 'background' },
         }}
       >
-        If I don’t sit cross-leged I salute the sun. I walk barefoot feeling the
-        earth beneath & grounding myself. I take every breath with grattitude to
-        my life journey. Somewhere between unpacking my backpack and saving
-        another album from my travels I decided to combine my passion for
-        change, movement and cultural education to learn coding to keep my
-        freedom and need for fulfillment.
+        If I don’t sit cross-legged I salute the sun. I walk barefoot feeling
+        the earth beneath & grounding myself. I take every breath with gratitude
+        to my life journey. Somewhere between unpacking my backpack and saving
+        another album from my travels, I decided to combine my passion for
+        change, movement and cultural education to learn coding to hold on to
+        freedom to move and need of fulfilment.
       </Box>
       <Image
         src="/image/kerala.jpg"

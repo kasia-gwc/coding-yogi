@@ -31,9 +31,9 @@ export const Banner = (): JSX.Element => {
         sx={{
           position: 'absolute',
           width: ['100%', 'auto'],
-          bottom: '7%',
+          bottom: '10%',
           textAlign: 'center',
-          right: ['0%', '10%'],
+          right: ['0%', '12%'],
           'h1, h2': { color: 'background' },
         }}
       >

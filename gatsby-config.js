@@ -7,7 +7,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Josefin Sans:200,400`, // you can also specify font weights and styles
+          `Josefin Sans:200,300,400`, // you can also specify font weights and styles
         ],
       },
     },
