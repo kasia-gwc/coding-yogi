@@ -28,18 +28,19 @@ export const Footer = (): JSX.Element => {
       </Heading>
       <Flex sx={{ justifyContent: 'center', mb: '70px' }}>
         {footerItems.map((footerItem, index) => (
-          <Flex sx={{ fontSize: 2 }} key={footerItem.title}>
+          <Flex sx={{ fontSize: '32px' }} key={footerItem.title}>
             <Link
               sx={{
                 color: 'text',
                 textDecoration: 'none',
+                fontSize: '32px',
               }}
               href={footerItem.url}
             >
               {footerItem.title}
             </Link>
             {footerItems.length - 1 !== index && (
-              <Box sx={{ mx: 3, color: 'text', fontWeight: 300 }}>|</Box>
+              <Box sx={{ mx: 4, color: 'text', fontWeight: 300 }}>|</Box>
             )}
           </Flex>
         ))}
