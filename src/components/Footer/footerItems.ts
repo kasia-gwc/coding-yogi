@@ -6,22 +6,22 @@ export const footerItems = [
   },
   {
     title: 'linkedin',
-    url: '#',
+    url: 'https://www.linkedin.com/in/katarzynagawelko/',
     cName: 'nav-links',
   },
   {
     title: 'cv',
-    url: '#',
+    url: 'https://shrtco.de/idhF7E',
     cName: 'nav-links',
   },
   {
     title: 'green yoga',
-    url: '#',
+    url: 'https://www.greenyoga.co/',
     cName: 'nav-links',
   },
   {
     title: 'instagram',
-    url: '#',
+    url: 'https://www.instagram.com/kasia.gwc/',
     cName: 'nav-links',
   },
 ]
