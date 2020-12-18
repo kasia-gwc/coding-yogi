@@ -51,6 +51,7 @@ const theme = {
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 3,
+      mb: 5,
     },
     h4: {
       color: 'text',
@@ -111,6 +112,28 @@ const theme = {
     },
     img: {
       maxWidth: '100%',
+    },
+  },
+  sizes: {
+    container: 1440,
+  },
+  layout: {
+    container: {
+      height: '100%',
+      minHeight: '100vh',
+      alignItems: 'center',
+      justifyContent: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+  },
+  buttons: {
+    secondary: {
+      color: 'background',
+      bg: 'secondary',
+      textTransform: 'uppercase',
+      px: 4,
+      borderRadius: 0,
     },
   },
 }

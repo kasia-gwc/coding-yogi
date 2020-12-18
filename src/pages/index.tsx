@@ -10,11 +10,11 @@ import { Portfolio } from '../components/Portfolio/Portfolio'
 const IndexPage = (): JSX.Element => {
   return (
     <main>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <About></About>
-      <Portfolio></Portfolio>
-      <Footer></Footer>
+      <Navbar />
+      <Banner />
+      <About />
+      <Portfolio />
+      <Footer />
     </main>
   )
 }

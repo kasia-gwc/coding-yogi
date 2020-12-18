@@ -1,29 +1,31 @@
-export const itemsList = [
+import { ProjectProps } from './Portfolio.models'
+
+export const itemsList: ProjectProps[] = [
   {
     title: 'WatchBuddy',
     image: '/image/watchbuddy.jpeg',
     url: 'https://watchbuddy.club',
-    technologies: '[RoR, HTML 5, CSS 3, PostgreSQL, JS, HEROKU]',
+    technologies: ['RoR', 'HTML', 'CSS', 'PostgreSQL', 'JS', 'HEROKU'],
   },
   {
     title: 'Mr Cocktail',
     image: '/image/mr-cocktail.jpeg',
     url: 'https://salty-sands-30827.herokuapp.com/',
-    
-    technologies: '[RoR, HTML 5, CSS 3, JS, HEROKU]',
+
+    technologies: ['RoR', 'HTML', 'CSS', 'JS', 'HEROKU'],
   },
   {
     title: 'Shorten Me',
     image: '/image/shorten-me.jpeg',
     url: 'https://shorten-me.netlify.com',
-    
-    technologies: '[JS, CSS 3, Netlify]',
+
+    technologies: ['TS', 'JEST', 'CSS', 'Netlify', 'Parcel'],
   },
   {
     title: 'Wehicle',
     image: '/image/wehicle.jpg',
     url: 'https://wehicle.herokuapp.com',
-    
-    technologies: '[RoR, HTML 5, CSS 3, JS, HEROKU]',
+
+    technologies: ['RoR', 'HTML', 'CSS', 'JS', 'HEROKU'],
   },
 ]
