@@ -5,7 +5,7 @@ import { footerItems } from './footerItems'
 
 export const Footer = (): JSX.Element => {
   return (
-    <Flex
+    <Flex id="footer"
       sx={{
         position: 'relative',
         flexDirection: 'column',

@@ -3,7 +3,7 @@ import { Box, Image, Flex, Heading } from 'theme-ui'
 
 export const About = (): JSX.Element => {
   return (
-    <Flex
+    <Flex id="about"
       sx={{
         height: '100vh',
         width: '100vw',
@@ -44,7 +44,7 @@ export const About = (): JSX.Element => {
         sx={{
           position: 'absolute',
           maxWidth: '30%, auto',
-          maxHeight: '55%',
+          maxHeight: '60%',
           bottom: '18%',
           right: '12%',
         }}

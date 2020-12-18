@@ -20,7 +20,6 @@ export const NavbarDesktop = (): JSX.Element => {
             >
               {menuItem.title}
             </Link>
-            {/* // 0 , 4 - 1, 3 !== 3 */}
             {menuItems.length - 1 !== index && (
               <Box sx={{ mx: 3, color: 'background', fontWeight: 300 }}>|</Box>
             )}
