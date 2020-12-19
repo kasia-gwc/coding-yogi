@@ -4,6 +4,7 @@ import { Box, Image, Flex, Heading } from 'theme-ui'
 export const Banner = (): JSX.Element => {
   return (
     <Flex
+      id="banner"
       sx={{
         height: '100vh',
         width: '100vw',

@@ -1,3 +1,3 @@
 export type LogoProps = {
-  variant?: 'dark' | 'light'
+  variant: 'dark' | 'light'
 }

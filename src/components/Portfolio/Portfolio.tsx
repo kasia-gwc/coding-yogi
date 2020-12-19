@@ -29,7 +29,6 @@ export const Portfolio = (): JSX.Element => {
       id="portfolio"
       sx={{
         position: 'relative',
-        py: 4,
       }}
     >
       <Heading
