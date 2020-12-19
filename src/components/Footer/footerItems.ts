@@ -5,6 +5,11 @@ export const footerItems = [
     cName: 'nav-links',
   },
   {
+    title: 'github',
+    url: 'https://github.com/kasia-gwc',
+    cName: 'nav-links',
+  },
+  {
     title: 'linkedin',
     url: 'https://www.linkedin.com/in/katarzynagawelko/',
     cName: 'nav-links',
@@ -17,11 +22,6 @@ export const footerItems = [
   {
     title: 'green yoga',
     url: 'https://www.greenyoga.co/',
-    cName: 'nav-links',
-  },
-  {
-    title: 'github',
-    url: 'https://github.com/kasia-gwc',
     cName: 'nav-links',
   },
 ]

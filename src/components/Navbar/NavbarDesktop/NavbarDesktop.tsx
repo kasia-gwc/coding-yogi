@@ -59,7 +59,7 @@ export const NavbarDesktop = (): JSX.Element => {
 
     setTimeout(() => {
       setIsClick(false)
-    }, 250)
+    }, 1000)
   }
   return (
     <Flex
