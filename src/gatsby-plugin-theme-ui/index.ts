@@ -119,14 +119,12 @@ const theme = {
   },
   layout: {
     container: {
-      height: '100%',
-      minHeight: '100vh',
       width: '80%',
       alignItems: 'center',
       justifyContent: 'center',
       display: 'flex',
       flexDirection: 'column',
-      mt: 3,
+      mt: 5,
     },
   },
   buttons: {
