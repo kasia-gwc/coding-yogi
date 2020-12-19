@@ -6,7 +6,9 @@ export const ProjectBox: FunctionComponent<
   ProjectProps & { width: string }
 > = ({ title, technologies, image, url, width }): JSX.Element => {
   const [active, setActive] = useState(false)
-
+  const handleExplore = () => {
+    window.open(url, '_blank')
+  }
   const handleClick = () => {
     setActive(!active)
   }
@@ -18,6 +20,17 @@ export const ProjectBox: FunctionComponent<
         position: 'relative',
         m: '0.5%',
         textAlign: 'center',
+        transition: 'transform 0.4s',
+        '&:hover': {
+          cursor: 'pointer',
+          transform: 'scale(1.12)',
+          zIndex: 1,
+          '.inactive-heading': {
+            opacity: 1,
+            transform: 'translate(-50%, -50%)',
+            visibility: 'visible',
+          },
+        },
       }}
     >
       {!active ? (
@@ -54,16 +67,20 @@ export const ProjectBox: FunctionComponent<
             />
           </Flex>
           <Heading
+            className="inactive-heading"
             as="h2"
             variant="styles.h2"
             sx={{
               color: 'background',
               position: 'absolute',
               whiteSpace: 'nowrap',
+              opacity: 0,
+              visibility: 'hidden',
               zIndex: 1,
               top: '50%',
               left: '50%',
-              transform: 'translate(-50%, -50%)',
+              transform: 'translate(-50%, 0%)',
+              transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
             }}
           >
             {title}
@@ -101,7 +118,17 @@ export const ProjectBox: FunctionComponent<
               </Text>
             ))}
           </Box>
-          <Button variant="secondary" sx={{ mt: 4 }}>
+          <Button
+            onClick={handleExplore}
+            variant="secondary"
+            sx={{
+              mt: 4,
+              transition: '0.2s',
+              '&:hover': {
+                transform: 'scale(1.1)',
+              },
+            }}
+          >
             Explore
           </Button>
         </Flex>

@@ -35,6 +35,7 @@ export const About = (): JSX.Element => {
             maxWidth: [450, null, '100%'],
             objectFit: 'cover',
             height: '100%',
+            maxHeight: 450,
             objectPosition: 'center center',
             ml: 6,
           }}
