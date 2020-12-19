@@ -20,8 +20,8 @@ export const footerItems = [
     cName: 'nav-links',
   },
   {
-    title: 'instagram',
-    url: 'https://www.instagram.com/kasia.gwc/',
+    title: 'github',
+    url: 'https://github.com/kasia-gwc',
     cName: 'nav-links',
   },
 ]

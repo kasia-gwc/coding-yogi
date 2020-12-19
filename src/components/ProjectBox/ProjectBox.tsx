@@ -59,6 +59,7 @@ export const ProjectBox: FunctionComponent<
             sx={{
               color: 'background',
               position: 'absolute',
+              whiteSpace: 'nowrap',
               zIndex: 1,
               top: '50%',
               left: '50%',

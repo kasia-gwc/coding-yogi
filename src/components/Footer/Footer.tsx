@@ -19,7 +19,7 @@ export const Footer = (): JSX.Element => {
         as="h3"
         variant="styles.h3"
         sx={{
-          color: 'primary',
+          color: 'secondary',
           textAlign: 'center',
           mb: '20px',
         }}

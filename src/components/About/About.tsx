@@ -32,7 +32,10 @@ export const About = (): JSX.Element => {
         <Image
           src="/image/kerala.jpg"
           sx={{
-            maxWidth: [450],
+            maxWidth: [450, null, '100%'],
+            objectFit: 'cover',
+            height: '100%',
+            objectPosition: 'center center',
             ml: 6,
           }}
         ></Image>

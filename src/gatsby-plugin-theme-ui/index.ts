@@ -115,7 +115,7 @@ const theme = {
     },
   },
   sizes: {
-    container: 1440,
+    container: 1050,
   },
   layout: {
     container: {
