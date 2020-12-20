@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Box, Container, Flex, Heading, Link } from 'theme-ui'
 import { Logo } from '../Logo/Logo'
 import { footerItems } from './footerItems'
+import { LinksProps } from './Links.models'
 
 export const Footer = (): JSX.Element => {
   return (
@@ -13,7 +14,16 @@ export const Footer = (): JSX.Element => {
           flexDirection: 'column',
         }}
       >
-        <Box sx={{ justifyContent: 'center', textAlign: 'center' }}>
+        <Box
+          sx={{
+            justifyContent: 'center',
+            textAlign: 'center',
+            transition: 'transform 0.4s',
+            '&:hover': {
+              transform: 'scale(1.2)',
+            },
+          }}
+        >
           <Logo variant="dark" />
         </Box>
         <Heading
@@ -29,14 +39,24 @@ export const Footer = (): JSX.Element => {
         </Heading>
         <Flex sx={{ justifyContent: 'center', mb: '70px' }}>
           {footerItems.map((footerItem, index) => (
-            <Flex sx={{ fontSize: '32px' }} key={footerItem.title}>
+            <Flex
+              sx={{
+                fontSize: '32px',
+              }}
+              key={footerItem.title}
+            >
               <Link
                 sx={{
                   color: 'text',
                   textDecoration: 'none',
                   fontSize: '32px',
+                  transition: '0.3s',
+                  '&:hover': {
+                    transform: 'scale(1.12)',
+                  },
                 }}
                 href={footerItem.url}
+                target= "_blank"
               >
                 {footerItem.title}
               </Link>
