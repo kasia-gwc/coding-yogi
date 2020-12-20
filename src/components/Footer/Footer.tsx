@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react'
 import { Box, Container, Flex, Heading, Link } from 'theme-ui'
 import { Logo } from '../Logo/Logo'
 import { footerItems } from './footerItems'
-import { LinksProps } from './Links.models'
 
 export const Footer = (): JSX.Element => {
   return (
