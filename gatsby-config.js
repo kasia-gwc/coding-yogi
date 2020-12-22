@@ -3,6 +3,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-theme-ui',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

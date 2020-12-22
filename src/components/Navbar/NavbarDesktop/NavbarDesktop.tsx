@@ -64,7 +64,7 @@ export const NavbarDesktop = (): JSX.Element => {
   return (
     <Flex
       sx={{
-        py: 3,
+        py: 2,
         px: 4,
         transition: 'background-color .3s',
         bg: lightNav ? 'background' : 'transparent',

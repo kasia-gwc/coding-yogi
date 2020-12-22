@@ -55,7 +55,7 @@ export const Footer = (): JSX.Element => {
                   },
                 }}
                 href={footerItem.url}
-                target= "_blank"
+                target="_blank"
               >
                 {footerItem.title}
               </Link>

@@ -20,12 +20,13 @@
     "@types/theme-ui": "^0.3.7",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.2.0",
+    "framer-motion": "^3.1.1",
     "gatsby": "^2.26.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.8.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-prettier-eslint": "^1.0.4",
-    "gatsby-plugin-react-helmet": "^3.6.0",
+    "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-sitemap": "^2.8.0",
     "gatsby-plugin-theme-ui": "^0.3.4",
     "prettier": "^2.2.1",
@@ -35,6 +36,7 @@
     "theme-ui": "^0.3.4"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.0",
     "@typescript-eslint/eslint-plugin": "^4.9.1",
     "@typescript-eslint/parser": "^4.9.1",
     "eslint": "^7.15.0",
