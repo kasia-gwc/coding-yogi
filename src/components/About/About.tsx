@@ -19,16 +19,17 @@ export const About = (): JSX.Element => {
           as="p"
           variant="styles.p"
           sx={{
-            maxWidth: ['30%', 'auto'],
+            maxWidth: ['36%', 'auto'],
             textAlign: 'center',
           }}
         >
           If I don’t sit cross-legged I salute the sun. I walk barefoot feeling
           the earth beneath & grounding myself. I take every breath with
           gratitude to my life journey. Somewhere between unpacking my backpack
-          and saving another album from my travels, I decided to combine my
-          passion for change, movement and cultural education to learn coding to
-          hold on to freedom to move and need of fulfilment.
+          and saving another album from my travels, I decided to combine my need
+          for stimulation, movement and cultural education with learning coding.
+          I have found ultimate fulfilment in creativity of the frontend and
+          grounding with raw coding principles.
         </Text>
         <Box
           className="carousel"
@@ -36,7 +37,8 @@ export const About = (): JSX.Element => {
             maxWidth: [450, null, '100%'],
             height: '100%',
             maxHeight: 450,
-            width: '100%',
+            width: '58%',
+            ml: 'auto',
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',
