@@ -1,5 +1,7 @@
 import React from 'react'
-import { Text, Image, Heading, Container, Flex } from 'theme-ui'
+import { Text, Heading, Container, Flex, Box } from 'theme-ui'
+import { Carousel } from '../Carousel/Carousel'
+import { jsx } from 'theme-ui'
 
 export const About = (): JSX.Element => {
   return (
@@ -29,7 +31,21 @@ export const About = (): JSX.Element => {
           passion for change, movement and cultural education to learn coding to
           hold on to freedom to move and need of fulfilment.
         </Text>
-        <Image
+        <Box
+          className="carousel"
+          sx={{
+            maxWidth: [450, null, '100%'],
+            height: '100%',
+            maxHeight: 450,
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Carousel />
+        </Box>
+        {/* <Image
           src="/image/kerala.jpg"
           sx={{
             maxWidth: [450, null, '100%'],
@@ -39,7 +55,7 @@ export const About = (): JSX.Element => {
             objectPosition: 'center center',
             ml: 6,
           }}
-        ></Image>
+        ></Image> */}
       </Flex>
     </Container>
   )

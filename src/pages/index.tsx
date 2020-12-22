@@ -14,7 +14,10 @@ const IndexPage = (): JSX.Element => {
       <Helmet>
         <html lang="en" />
         <title>Coding Yogi</title>
-        <meta name="description" content="A short story and professional portfolio of a yogi traveler, who discovered passion for coding." />
+        <meta
+          name="description"
+          content="A short story and professional portfolio of a yogi traveler, who discovered passion for coding."
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React from 'react'
 import { Box, Container, Flex, Heading, Link } from 'theme-ui'
 import { Logo } from '../Logo/Logo'
 import { footerItems } from './footerItems'
