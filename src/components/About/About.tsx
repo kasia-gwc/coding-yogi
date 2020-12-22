@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text, Heading, Container, Flex, Box } from 'theme-ui'
 import { Carousel } from '../Carousel/Carousel'
-import { jsx } from 'theme-ui'
 
 export const About = (): JSX.Element => {
   return (
@@ -37,6 +36,7 @@ export const About = (): JSX.Element => {
             maxWidth: [450, null, '100%'],
             height: '100%',
             maxHeight: 450,
+            width: '100%',
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',

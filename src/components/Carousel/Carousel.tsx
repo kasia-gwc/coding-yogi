@@ -1,4 +1,5 @@
-import React from 'react'
+/** @jsx jsx */
+import { jsx, Box } from 'theme-ui'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from 'popmotion'
@@ -50,9 +51,22 @@ export const Carousel = (): JSX.Element => {
   }
 
   return (
-    <>
+    <Box
+      sx={{
+        position: 'relative',
+        width: '50%',
+        height: 500,
+        overflow: 'hidden',
+      }}
+    >
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
+          sx={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            position: 'absolute',
+          }}
           key={page}
           src={images[imageIndex]}
           custom={direction}
@@ -78,12 +92,6 @@ export const Carousel = (): JSX.Element => {
           }}
         />
       </AnimatePresence>
-      <div className="next" onClick={() => paginate(1)}>
-        {'‣'}
-      </div>
-      <div className="prev" onClick={() => paginate(-1)}>
-        {'‣'}
-      </div>
-    </>
+    </Box>
   )
 }
