@@ -14,12 +14,16 @@ export const About = (): JSX.Element => {
       >
         about me
       </Heading>
-      <Flex sx={{ justifyContent: 'center' }}>
+      <Flex
+        sx={{
+          justifyContent: 'center',
+        }}
+      >
         <Text
           as="p"
           variant="styles.p"
           sx={{
-            maxWidth: ['36%', 'auto'],
+            maxWidth: ['100%', '36%', 'auto'],
             textAlign: 'center',
           }}
         >
@@ -37,7 +41,7 @@ export const About = (): JSX.Element => {
             maxWidth: [450, null, '100%'],
             height: '100%',
             maxHeight: 450,
-            width: '58%',
+            width: ['100%', '58%'],
             ml: 'auto',
             position: 'relative',
             display: 'flex',

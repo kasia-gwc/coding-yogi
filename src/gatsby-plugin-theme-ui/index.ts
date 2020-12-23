@@ -79,7 +79,7 @@ const theme = {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
-      fontSize: 1,
+      fontSize: [0, 1]
     },
     a: {
       color: 'primary',
