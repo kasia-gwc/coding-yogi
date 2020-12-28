@@ -50,22 +50,30 @@ export const MyStory = (): JSX.Element => {
           { autoAlpha: 1, y: 0, duration: 2 }
         ),
         index > 0 ? '-=0.5' : '0'
-      )
-        .add(
-          gsap.fromTo(
-            descElement,
-            { autoAlpha: 0, y: '300%' },
-            { autoAlpha: 1, y: 0, duration: 1 }
-          ),
-          '-=0.1'
-        ) // animate title from the top
+      ).add(
         // animate description from the bottom
-        .add(gsap.to(flowerElement, { autoAlpha: 1 }), '<')
-        .addLabel(`slide-${index}`)
+        gsap.fromTo(
+          descElement,
+          { autoAlpha: 0, y: '300%' },
+          { autoAlpha: 1, y: 0, duration: 1 }
+        ),
+        '-=0.1'
+      )
+      if (index > 0) {
+        tl.add(
+          gsap.to(containerHtml.querySelector(`.image-${index - 1}`), {
+            autoAlpha: 0,
+          }),
+          '<'
+        )
+      }
+      tl.add(gsap.to(flowerElement, { autoAlpha: 1 }), '<').addLabel(
+        `slide-${index}`
+      )
       if (index !== stories.length - 1) {
-        tl.add(gsap.to(titleElement, { autoAlpha: 0, y: '-250%', duration: 1 }))
-          .add(gsap.to(descElement, { autoAlpha: 0, y: '-150%' }), '-=0.1')
-          .add(gsap.to(flowerElement, { autoAlpha: 0 }))
+        tl.add(
+          gsap.to(titleElement, { autoAlpha: 0, y: '-250%', duration: 1 })
+        ).add(gsap.to(descElement, { autoAlpha: 0, y: '-150%' }), '-=0.1')
       }
     })
 
@@ -75,6 +83,7 @@ export const MyStory = (): JSX.Element => {
   }, [])
   return (
     <Box
+      id="my-story"
       ref={containerRef}
       sx={{ position: 'relative', width: '100%', height: '100vh' }}
     >
@@ -90,21 +99,27 @@ export const MyStory = (): JSX.Element => {
           }}
           key={`${title}-${index}`}
         >
-          <Heading
-            as="h3"
-            variant="styles.h3"
-            sx={{
-              color: 'primary',
-              position: 'absolute',
-              textAlign: 'center',
-              top: '65px',
-              width: '100%',
-            }}
-          >
-            curriculum vitae
-          </Heading>
+          {index === 0 && (
+            <Heading
+              as="h3"
+              variant="styles.h3"
+              sx={{
+                color: 'primary',
+                position: 'absolute',
+                textAlign: 'center',
+                top: '65px',
+                width: '100%',
+              }}
+            >
+              curriculum vitae
+            </Heading>
+          )}
           <Box sx={{ placeSelf: 'center', width: 250, height: 250 }}>
-            <Image src={image} sx={{ opacity: 0, visibility: 'hidden' }} />
+            <Image
+              className={`image-${index}`}
+              src={image}
+              sx={{ opacity: 0, visibility: 'hidden' }}
+            />
           </Box>
           <Box>
             <Heading
