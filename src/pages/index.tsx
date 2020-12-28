@@ -6,6 +6,7 @@ import { Navbar } from '../components/Navbar/Navbar'
 import { Footer } from '../components/Footer/Footer'
 import { Portfolio } from '../components/Portfolio/Portfolio'
 import { Helmet } from 'react-helmet'
+import { MyStory } from '../components/MyStory/MyStory'
 
 // markup
 const IndexPage = (): JSX.Element => {
@@ -44,6 +45,7 @@ const IndexPage = (): JSX.Element => {
       <Banner />
       <About />
       <Portfolio />
+      <MyStory />
       <Footer />
     </main>
   )
