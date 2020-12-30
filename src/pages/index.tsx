@@ -40,6 +40,11 @@ const IndexPage = (): JSX.Element => {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2ec4b6" />
         <meta name="msapplication-TileColor" content="#2ec4b6" />
         <meta name="theme-color" content="#2ec4b6" />
+
+        <link
+          href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+          rel="stylesheet"
+        />
       </Helmet>
       <Navbar />
       <Banner />

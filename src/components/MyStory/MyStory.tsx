@@ -3,8 +3,18 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { stories } from './stories-data'
 import { Box, Grid, Heading, Image, Text } from 'theme-ui'
+import mapboxgl from 'mapbox-gl'
 
 gsap.registerPlugin(ScrollTrigger)
+
+// mapboxgl.accessToken =
+//   'pk.eyJ1Ijoia2FzaWEtbXNnIiwiYSI6ImNrajF5b2lrYjBvOTQyc3A4b2RkeDVraHUifQ.JRV2eyfcZggJ19lQ-x7ojw'
+// const map = new mapboxgl.Map({
+//   container: 'map',
+//   style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+//   center: [-74.5, 40], // starting position [lng, lat]
+//   zoom: 9, // starting zoom
+// })
 
 export const MyStory = (): JSX.Element => {
   /**
@@ -47,7 +57,7 @@ export const MyStory = (): JSX.Element => {
         gsap.fromTo(
           titleElement,
           { autoAlpha: 0, y: '200%' },
-          { autoAlpha: 1, y: 0, duration: 2 }
+          { autoAlpha: 1, y: 0, duration: 2, onStart: () => console.log(index) }
         ),
         index > 0 ? '-=0.5' : '0'
       ).add(
@@ -67,9 +77,13 @@ export const MyStory = (): JSX.Element => {
           '<'
         )
       }
-      tl.add(gsap.to(flowerElement, { autoAlpha: 1 }), '<').addLabel(
-        `slide-${index}`
-      )
+      tl.add(
+        gsap.to(flowerElement, {
+          autoAlpha: 1,
+          onReverseComplete: () => console.log(index, 'repeat'),
+        }),
+        '<'
+      ).addLabel(`slide-${index}`)
       if (index !== stories.length - 1) {
         tl.add(
           gsap.to(titleElement, { autoAlpha: 0, y: '-250%', duration: 1 })
