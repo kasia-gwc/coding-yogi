@@ -13,6 +13,7 @@ const IndexPage = (): JSX.Element => {
   return (
     <main>
       <Helmet>
+        <meta charSet="UTF-8" />
         <html lang="en" />
         <title>Coding Yogi</title>
         <meta

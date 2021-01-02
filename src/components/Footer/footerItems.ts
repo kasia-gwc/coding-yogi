@@ -1,7 +1,7 @@
 export const footerItems = [
   {
     title: 'email',
-    url: '#',
+    url: 'mailto:kasia.msg@gmail.com',
     cName: 'nav-links',
   },
   {

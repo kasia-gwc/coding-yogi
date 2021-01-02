@@ -1,42 +1,71 @@
 export const stories = [
   {
-    title: 'Poland',
+    title: 'Poland 🇵🇱',
     description:
-      'It’s where I was born, educated and gained my first professional experience as a recruiter.',
+      'Everything started here - my full education, first professional experience, my passion for yoga and travels.',
     image: '/image/petals/petal-1.png',
+    pin: {
+      lng: 51.93,
+      lat: 20.39,
+    },
   },
   {
-    title: 'China',
+    title: 'China 🇨🇳',
     description:
-      'First big solo trip with a noble volunteering plans to save the turtles and clean the ocean.',
+      '... is where I booked my first solo trip (one-way) to volunteer in an environmental project of cleaning the ocean and to teach English Chinese children.',
     image: '/image/petals/petal-2.png',
+    pin: {
+      lng: 31.8229828,
+      lat: 117.5636051,
+    },
   },
   {
-    title: 'Vietnam',
+    title: 'Vietnam 🇻🇳',
     description:
-      'Living on the edge - driving a moped and teaching English Vietnamese children',
+      'Thought me in three months how to drive a moped, appreciate simplicity of life and transformed me into a vegetarian!',
     image: '/image/petals/petal-3.png',
+    pin: {
+      lng: 10.762622,
+      lat: 106.660172,
+    },
   },
   {
-    title: 'India',
-    description: 'I came back to my professional path of being HR generalist',
+    title: 'India 🇮🇳',
+    description:
+      'Called me home to come back to my career path of a people person after a few months of teaching English, and showed me some of the most beautiful places I have ever seen!',
     image: '/image/petals/petal-4.png',
+    pin: {
+      lng: 13.26,
+      lat: 79.94,
+    },
   },
   {
-    title: 'England',
-    description: 'Continue to work in people function in Fintech sector',
+    title: 'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    description: `Gave me the best startup experience in a fintech scene and thought me a lot of what makes a great company's culture`,
     image: '/image/petals/petal-5.png',
+    pin: {
+      lng: 51.34,
+      lat: 0,
+    },
   },
   {
-    title: 'India',
+    title: 'India 🇮🇳',
     description:
-      'Getting qualified to teach yoga and landing her freelance job soon after',
+      'Called me home again to learn yoga at the source and become cerrified yoga teacher. What a great start to this unforgettable 2020!',
     image: '/image/petals/petal-6.png',
+    pin: {
+      lng: 10.59,
+      lat: 76.13,
+    },
   },
   {
-    title: 'Germany',
+    title: 'Germany 🇩🇪',
     description:
-      'Year 2020 offered coding at Le Wagon and become a coding yogi!',
+      'Yoga carried me throughout 2020 and gave me motivation to sit and learn coding under the lockdown, find Le Wagon and in few months become a <b>coding yogi</b>!',
     image: '/image/petals/petal-7.png',
+    pin: {
+      lng: 52.17,
+      lat: 13.35,
+    },
   },
 ]
