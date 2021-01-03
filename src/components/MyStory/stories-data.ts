@@ -6,7 +6,7 @@ export const stories = [
     image: '/image/petals/petal-1.png',
     pin: {
       lng: 51.93,
-      lat: 20.39,
+      lat: 21.39,
     },
   },
   {
@@ -15,8 +15,8 @@ export const stories = [
       '... is where I booked my first solo trip (one-way) to volunteer in an environmental project of cleaning the ocean and to teach English Chinese children.',
     image: '/image/petals/petal-2.png',
     pin: {
-      lng: 31.8229828,
-      lat: 117.5636051,
+      lng: 31,
+      lat: 120,
     },
   },
   {
@@ -25,8 +25,8 @@ export const stories = [
       'Thought me in three months how to drive a moped, appreciate simplicity of life and transformed me into a vegetarian!',
     image: '/image/petals/petal-3.png',
     pin: {
-      lng: 10.762622,
-      lat: 106.660172,
+      lng: 10,
+      lat: 106,
     },
   },
   {
@@ -36,7 +36,7 @@ export const stories = [
     image: '/image/petals/petal-4.png',
     pin: {
       lng: 13.26,
-      lat: 79.94,
+      lat: 78.94,
     },
   },
   {
@@ -44,8 +44,8 @@ export const stories = [
     description: `Gave me the best startup experience in a fintech scene and thought me a lot of what makes a great company's culture`,
     image: '/image/petals/petal-5.png',
     pin: {
-      lng: 51.34,
-      lat: 0,
+      lng: 52,
+      lat: -1,
     },
   },
   {
@@ -65,7 +65,7 @@ export const stories = [
     image: '/image/petals/petal-7.png',
     pin: {
       lng: 52.17,
-      lat: 13.35,
+      lat: 13,
     },
   },
 ]

@@ -1,10 +1,43 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Text, Heading, Container, Flex, Box } from 'theme-ui'
 import { Carousel } from '../Carousel/Carousel'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 export const About = (): JSX.Element => {
+  const containerRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const containerHTML = containerRef.current as HTMLDivElement
+    if (containerRef.current) {
+      const aboutContent = containerRef.current.querySelector('.about-content')
+      const carousel = containerRef.current.querySelector('.carousel')
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 1,
+          ease: 'power1.in',
+        },
+        scrollTrigger: {
+          trigger: containerHTML, //it's where we begin the trigger in the view
+          start: 'top 80%',
+          // once: true,
+          markers: true,
+        },
+      })
+      tl.fromTo(
+        aboutContent,
+        { autoAlpha: 0, y: '35%' },
+        { autoAlpha: 1, y: '0%' }
+      ).fromTo(
+        carousel,
+        { autoAlpha: 0, y: '35%' },
+        { autoAlpha: 1, y: '0%' },
+        0.5
+      )
+    }
+  }, [])
   return (
-    <Container id="about">
+    <Container id="about" ref={containerRef}>
       <Heading
         as="h3"
         variant="styles.h3"
@@ -20,6 +53,7 @@ export const About = (): JSX.Element => {
         }}
       >
         <Text
+          className="about-content"
           as="p"
           variant="styles.p"
           sx={{
