@@ -14,14 +14,13 @@ export const About = (): JSX.Element => {
       const carousel = containerRef.current.querySelector('.carousel')
       const tl = gsap.timeline({
         defaults: {
-          duration: 1,
-          ease: 'power1.in',
+          duration: 1.5,
+          ease: 'power1.out',
         },
         scrollTrigger: {
           trigger: containerHTML, //it's where we begin the trigger in the view
           start: 'top 80%',
           // once: true,
-          markers: true,
         },
       })
       tl.fromTo(

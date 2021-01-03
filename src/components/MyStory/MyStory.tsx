@@ -54,10 +54,7 @@ export const MyStory = (): JSX.Element => {
         el.style.borderRadius = '50%'
         el.style.width = '40px'
         el.style.height = '40px'
-        // el.style.width = '30px'
-        // el.style.height = '30px'
-        // el.style.backgroundImage = 'logo-lotus.svg'
-        // el.innerHTML = 'logo-lotus.svg'
+
         if (mapRef.current) {
           new mapboxgl.Marker(el)
             .setLngLat([story.pin.lat, story.pin.lng])
@@ -80,6 +77,7 @@ export const MyStory = (): JSX.Element => {
         },
       },
     })
+
     const storyBoxes: HTMLDivElement[] = Array.from(
       containerHtml.querySelectorAll('.story') //we convert it into an array as before it was giving a node list and we gave it a className 'story'
     )
@@ -143,92 +141,90 @@ export const MyStory = (): JSX.Element => {
   }, [])
 
   return (
-    <Box>
+    <Box
+      id="my-story"
+      ref={containerRef}
+      sx={{ position: 'relative', width: '100%', height: '90vh' }}
+    >
       <Box
-        id="my-story"
-        ref={containerRef}
-        sx={{ position: 'relative', width: '100%', height: '90vh' }}
+        sx={{
+          height: '80vh',
+          position: 'absolute',
+          width: '40%',
+          right: 0,
+          '.mapboxgl-ctrl': {
+            display: 'none !important',
+          },
+        }}
       >
-        <Box
-          sx={{
-            height: '80vh',
-            position: 'absolute',
-            width: '40%',
-            right: 0,
-            '.mapboxgl-ctrl': {
-              display: 'none !important',
-            },
-          }}
-        >
-          <Box id="map" sx={{ height: '100vh', width: '100%' }} />
-        </Box>
-        {stories.map(({ title, description, image, pin }, index) => (
-          <Grid
-            className="story"
-            data-lat={pin.lat}
-            data-lng={pin.lng}
-            sx={{
-              gridTemplateColumns: '20% 35% 40%',
-              height: '100vh',
-              width: '100%',
-              placeContent: 'center',
-              position: 'absolute',
-              zIndex: 1,
-              bg: 'transparent',
-            }}
-            key={`${title}-${index}`}
-          >
-            {index === 0 && (
-              <Heading
-                as="h3"
-                variant="styles.h3"
-                sx={{
-                  color: 'primary',
-                  position: 'absolute',
-                  textAlign: 'center',
-                  top: ['0', '60px'],
-                  width: '100%',
-                }}
-              >
-                my story...
-              </Heading>
-            )}
-            <Box sx={{ placeSelf: 'center', width: 250, height: 250 }}>
-              <Image
-                className={`image-${index}`}
-                src={image}
-                sx={{ opacity: 0, visibility: 'hidden' }}
-              />
-            </Box>
-            <Box>
-              <Heading
-                className="title"
-                as="h3"
-                variant="styles.h3"
-                sx={{
-                  transform: 'translateY(200%)',
-                  opacity: 0,
-                  visibility: 'hidden',
-                }}
-              >
-                {title}
-              </Heading>
-              <Text
-                className="desc"
-                dangerouslySetInnerHTML={{ __html: description }}
-                as="p"
-                sx={{
-                  b: { fontWeight: 'bold' },
-                  maxWidth: 400,
-                  transform: 'translateY(200%)',
-                  opacity: 0,
-                  visibility: 'hidden',
-                }}
-              ></Text>
-            </Box>
-          </Grid>
-        ))}
+        <Box id="map" sx={{ height: '100vh', width: '100%' }} />
       </Box>
+      {stories.map(({ title, description, image, pin }, index) => (
+        <Grid
+          className="story"
+          data-lat={pin.lat}
+          data-lng={pin.lng}
+          sx={{
+            gridTemplateColumns: '20% 35% 40%',
+            height: '100vh',
+            width: '100%',
+            placeContent: 'center',
+            position: 'absolute',
+            zIndex: 1,
+            bg: 'transparent',
+          }}
+          key={`${title}-${index}`}
+        >
+          {index === 0 && (
+            <Heading
+              as="h3"
+              variant="styles.h3"
+              sx={{
+                color: 'primary',
+                position: 'absolute',
+                textAlign: 'center',
+                top: ['0', '60px'],
+                width: '100%',
+              }}
+            >
+              my story...
+            </Heading>
+          )}
+          <Box sx={{ placeSelf: 'center', width: 250, height: 250 }}>
+            <Image
+              className={`image-${index}`}
+              src={image}
+              sx={{ opacity: 0, visibility: 'hidden' }}
+            />
+          </Box>
+          <Box>
+            <Heading
+              className="title"
+              as="h3"
+              variant="styles.h3"
+              sx={{
+                transform: 'translateY(200%)',
+                opacity: 0,
+                visibility: 'hidden',
+              }}
+            >
+              {title}
+            </Heading>
+            <Text
+              className="desc"
+              dangerouslySetInnerHTML={{ __html: description }}
+              as="p"
+              sx={{
+                b: { fontWeight: 'bold' },
+                maxWidth: 400,
+                transform: 'translateY(200%)',
+                opacity: 0,
+                visibility: 'hidden',
+              }}
+            ></Text>
+          </Box>
+        </Grid>
+      ))}
     </Box>
   )
 }

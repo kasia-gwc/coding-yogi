@@ -1,26 +1,25 @@
-import React, { MouseEvent, useCallback, useEffect, useState } from 'react'
+import React, {
+  MouseEvent,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { menuItems } from '../menuItems'
 import { Box, Flex, Link } from 'theme-ui'
 import { Logo } from '../../Logo/Logo'
+import { NavbarContext } from '../NavbarContext'
 
 export const NavbarDesktop = (): JSX.Element => {
-  const [lightNav, setLightNav] = useState(false)
   const [activeBtn, setActiveBtn] = useState('-1')
   const [isClick, setIsClick] = useState(false)
+  const { lightNav } = useContext(NavbarContext)
 
-  const updateLightNav = useCallback(() => {
-    const bannerId = document.getElementById('banner')
-
-    const lightNavThreshold = bannerId?.clientHeight
-      ? 0.5 * bannerId.clientHeight
-      : 700
-    if (window.scrollY > lightNavThreshold) {
-      setLightNav(true)
-    } else {
-      setLightNav(false)
+  useEffect(() => {
+    if (!lightNav) {
       setActiveBtn('-1')
     }
-  }, [])
+  }, [lightNav])
 
   const updateLinksState = useCallback(() => {
     !isClick &&
@@ -35,14 +34,13 @@ export const NavbarDesktop = (): JSX.Element => {
 
   useEffect(() => {
     const onScroll = () => {
-      updateLightNav()
       updateLinksState()
     }
     window.addEventListener('scroll', onScroll)
     return () => {
       window.removeEventListener('scroll', onScroll)
     }
-  }, [updateLightNav, updateLinksState])
+  }, [updateLinksState])
 
   const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
@@ -67,7 +65,6 @@ export const NavbarDesktop = (): JSX.Element => {
         py: 2,
         px: 4,
         transition: 'background-color .3s',
-        bg: lightNav ? 'background' : 'transparent',
       }}
     >
       <Logo variant={lightNav ? 'dark' : 'light'} />

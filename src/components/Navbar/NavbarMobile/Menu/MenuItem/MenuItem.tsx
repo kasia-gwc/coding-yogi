@@ -1,6 +1,7 @@
-import * as React from 'react'
+import React, { FunctionComponent } from 'react'
 import { motion } from 'framer-motion'
-import { Box } from 'theme-ui'
+import { Link } from 'theme-ui'
+import { MenuItemProps } from './MenuItem.model'
 
 const variants = {
   open: {
@@ -19,20 +20,25 @@ const variants = {
   },
 }
 
-const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF']
-
-export const MenuItem = ({ i }) => {
+export const MenuItem: FunctionComponent<MenuItemProps> = ({
+  title,
+  url,
+  onClick,
+}): JSX.Element => {
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Box
-        className="icon-placeholder"
-        sx={{ border: `2px solid ${colors[i]}` }}
-      />
-      <div className="text-placeholder" style={style} />
+      <Link
+        onClick={onClick}
+        sx={{ textDecoration: 'none', mt: 3, display: 'block' }}
+        href={url}
+        id={url}
+      >
+        {title}
+      </Link>
     </motion.li>
   )
 }
