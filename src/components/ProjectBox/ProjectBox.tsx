@@ -15,7 +15,7 @@ export const ProjectBox: FunctionComponent<
   return (
     <Box
       sx={{
-        height: 280,
+        height: 350,
         width,
         position: 'relative',
         m: '0.5%',

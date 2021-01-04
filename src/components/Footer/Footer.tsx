@@ -1,7 +1,8 @@
+import { transform } from 'framer-motion'
 import React from 'react'
 import { Box, Container, Flex, Heading, Link, Image } from 'theme-ui'
 import { Logo } from '../Logo/Logo'
-import { footerItems } from './footerItems'
+import { footerItems, greenyoga } from './footerItems'
 
 export const Footer = (): JSX.Element => {
   return (
@@ -13,18 +14,6 @@ export const Footer = (): JSX.Element => {
           flexDirection: 'column',
         }}
       >
-        <Box
-          sx={{
-            justifyContent: 'center',
-            textAlign: 'center',
-            transition: 'transform 0.4s',
-            '&:hover': {
-              transform: 'scale(1.2)',
-            },
-          }}
-        >
-          <Logo variant="dark" />
-        </Box>
         <Heading
           as="h3"
           variant="styles.h3"
@@ -32,11 +21,12 @@ export const Footer = (): JSX.Element => {
             color: 'secondary',
             textAlign: 'center',
             mb: '20px',
+            mt: '40px',
           }}
         >
           contact me
         </Heading>
-        <Flex sx={{ justifyContent: 'center', mb: '70px' }}>
+        <Flex sx={{ justifyContent: 'center', mb: '50px' }}>
           {footerItems.map((footerItem, index) => (
             // eslint-disable-next-line react/jsx-key
             <Box key={footerItem.title}>
@@ -74,25 +64,69 @@ export const Footer = (): JSX.Element => {
                   </Box>
                 )}
               </Flex>
-
-              <Image
-                src={footerItem.image}
+              <Link
+                href={footerItem.url}
                 sx={{
-                  height: '42px',
-                  color: 'turquoise',
-                  m: 2,
-                  p: 1,
                   display: ['block', 'none'],
                   cursor: 'pointer',
+                  m: 2,
+                  p: 1,
                   transition: '0.3s',
                   '&:hover': {
                     transform: 'scale(1.12)',
                   },
                 }}
-              />
+              >
+                <Image
+                  src={footerItem.image}
+                  sx={{
+                    height: '42px',
+                  }}
+                />
+              </Link>
             </Box>
           ))}
         </Flex>
+        <Heading
+          as="h3"
+          variant="styles.h3"
+          sx={{
+            color: 'secondary',
+            textAlign: 'center',
+            mb: '30px',
+            fontWeight: 'body',
+            transition: '0.3s',
+            '&Link:hover': {
+              transform: 'scale(1.12)',
+            },
+          }}
+        >
+          & <br />
+          join my yoga classes at{' '}
+          <Link
+            href={greenyoga.url}
+            target="_blank"
+            sx={{
+              textDecoration: 'none',
+              fontWeight: 'heading',
+            }}
+          >
+            Green Yoga
+          </Link>
+        </Heading>
+        <Box
+          sx={{
+            justifyContent: 'center',
+            textAlign: 'center',
+            mb: '30px',
+            transition: 'transform 0.4s',
+            '&:hover': {
+              transform: 'scale(1.1)',
+            },
+          }}
+        >
+          <Logo variant="dark" />
+        </Box>
       </Flex>
     </Container>
   )

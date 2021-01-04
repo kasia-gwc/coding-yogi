@@ -19,9 +19,10 @@ export const footerItems = [
     url: 'https://shrtco.de/idhF7E',
     image: '/image/contact-icons/pdf-cv.svg',
   },
-  {
-    title: 'green yoga',
-    url: 'https://www.greenyoga.co/',
-    image: '/image/contact-icons/plant.svg',
-  },
 ]
+
+export const greenyoga = {
+  title: 'green yoga',
+  url: 'https://www.greenyoga.co/',
+  image: '/image/contact-icons/plant.svg',
+}

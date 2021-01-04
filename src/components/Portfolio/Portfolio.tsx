@@ -38,6 +38,7 @@ export const Portfolio = (): JSX.Element => {
         sx={{
           color: 'secondary',
           textAlign: 'center',
+          mb: 5,
         }}
       >
         portfolio
