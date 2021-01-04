@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Flex, Heading, Link } from 'theme-ui'
+import { Box, Container, Flex, Heading, Link, Image } from 'theme-ui'
 import { Logo } from '../Logo/Logo'
 import { footerItems } from './footerItems'
 
@@ -38,31 +38,59 @@ export const Footer = (): JSX.Element => {
         </Heading>
         <Flex sx={{ justifyContent: 'center', mb: '70px' }}>
           {footerItems.map((footerItem, index) => (
-            <Flex
-              sx={{
-                fontSize: '32px',
-              }}
-              key={footerItem.title}
-            >
-              <Link
+            // eslint-disable-next-line react/jsx-key
+            <Box key={footerItem.title}>
+              <Flex
                 sx={{
-                  color: 'text',
-                  textDecoration: 'none',
                   fontSize: '32px',
+                }}
+              >
+                <Link
+                  sx={{
+                    color: 'text',
+                    display: ['none', 'block'],
+                    textDecoration: 'none',
+                    fontSize: '32px',
+                    transition: '0.3s',
+                    '&:hover': {
+                      transform: 'scale(1.12)',
+                    },
+                  }}
+                  href={footerItem.url}
+                  target="_blank"
+                >
+                  {footerItem.title}
+                </Link>
+                {footerItems.length - 1 !== index && (
+                  <Box
+                    sx={{
+                      mx: 4,
+                      color: 'text',
+                      fontWeight: 300,
+                      display: ['none', 'block'],
+                    }}
+                  >
+                    |
+                  </Box>
+                )}
+              </Flex>
+
+              <Image
+                src={footerItem.image}
+                sx={{
+                  height: '42px',
+                  color: 'turquoise',
+                  m: 2,
+                  p: 1,
+                  display: ['block', 'none'],
+                  cursor: 'pointer',
                   transition: '0.3s',
                   '&:hover': {
                     transform: 'scale(1.12)',
                   },
                 }}
-                href={footerItem.url}
-                target="_blank"
-              >
-                {footerItem.title}
-              </Link>
-              {footerItems.length - 1 !== index && (
-                <Box sx={{ mx: 4, color: 'text', fontWeight: 300 }}>|</Box>
-              )}
-            </Flex>
+              />
+            </Box>
           ))}
         </Flex>
       </Flex>

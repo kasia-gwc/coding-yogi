@@ -52,7 +52,7 @@ const IndexPage = (): JSX.Element => {
       <About />
       <Portfolio />
       <MyStory />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   )
 }

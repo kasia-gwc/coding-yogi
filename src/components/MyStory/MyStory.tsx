@@ -165,7 +165,7 @@ export const MyStory = (): JSX.Element => {
           data-lat={pin.lat}
           data-lng={pin.lng}
           sx={{
-            gridTemplateColumns: '20% 35% 40%',
+            gridTemplateColumns: '20% 35% 45%',
             height: '100vh',
             width: '100%',
             placeContent: 'center',

@@ -48,9 +48,10 @@ export const NavbarDesktop = (): JSX.Element => {
     const id = event.currentTarget.id
     const anchorElement = document.getElementById(id.replace('#', ''))
     const yPosition = anchorElement?.getBoundingClientRect().y || 0
-    setActiveBtn(event.currentTarget.dataset.index || '-1')
+    const index = event.currentTarget.dataset.index || '-1'
+    setActiveBtn(index)
     window.scrollTo({
-      top: window.scrollY + yPosition - 100,
+      top: window.scrollY + yPosition + (index === '2' ? 50 : -80),
       left: 0,
       behavior: 'smooth',
     })
