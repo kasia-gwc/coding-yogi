@@ -2,26 +2,27 @@ export const footerItems = [
   {
     title: 'email',
     url: 'mailto:kasia.msg@gmail.com',
-    cName: 'nav-links',
+    image: '/image/contact-icons/e-mail.svg',
   },
   {
     title: 'github',
     url: 'https://github.com/kasia-gwc',
-    cName: 'nav-links',
+    image: '/image/contact-icons/github-square-brands.svg',
   },
   {
     title: 'linkedin',
     url: 'https://www.linkedin.com/in/katarzynagawelko/',
-    cName: 'nav-links',
+    image: '/image/contact-icons/linkedin-new.svg',
   },
   {
     title: 'cv',
     url: 'https://shrtco.de/idhF7E',
-    cName: 'nav-links',
-  },
-  {
-    title: 'green yoga',
-    url: 'https://www.greenyoga.co/',
-    cName: 'nav-links',
+    image: '/image/contact-icons/pdf-cv.svg',
   },
 ]
+
+export const greenyoga = {
+  title: 'green yoga',
+  url: 'https://www.greenyoga.co/',
+  image: '/image/contact-icons/plant.svg',
+}

@@ -42,6 +42,7 @@ export const About = (): JSX.Element => {
         variant="styles.h3"
         sx={{
           color: 'primary',
+          mb: 5,
         }}
       >
         about me

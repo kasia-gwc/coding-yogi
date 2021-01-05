@@ -33,7 +33,7 @@ export const NavbarMobile: FunctionComponent = (): JSX.Element => {
         <motion.div
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
-          sx={{ ml: 'auto' }}
+          sx={{ ml: 'auto', display: 'flex', mr: '15px' }}
         >
           <MenuToggle toggle={toggleOpen} isOpen={isOpen} />
         </motion.div>

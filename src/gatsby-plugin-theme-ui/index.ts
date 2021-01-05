@@ -7,7 +7,7 @@ const theme = {
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [16, 23, 25, 34, 44, 61],
+  fontSizes: [16, 22, 25, 34, 44, 61],
   fontWeights: {
     body: 200,
     heading: 400,

@@ -83,7 +83,6 @@ export const Carousel = (): JSX.Element => {
         width: '100%',
         height: 470,
         overflow: 'hidden',
-        bg: 'black',
       }}
     >
       <AnimatePresence initial={false} custom={direction}>

@@ -10,7 +10,7 @@ export const menuItems = [
     cName: 'nav-links',
   },
   {
-    title: 'curriculum vitae',
+    title: 'my story',
     url: '#my-story',
     cName: 'nav-links',
   },

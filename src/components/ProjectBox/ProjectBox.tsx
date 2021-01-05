@@ -4,7 +4,7 @@ import { ProjectProps } from '../Portfolio/Portfolio.models'
 
 export const ProjectBox: FunctionComponent<
   ProjectProps & { width: string }
-> = ({ title, technologies, image, url, width }): JSX.Element => {
+> = ({ title, description, technologies, image, url, width }): JSX.Element => {
   const [active, setActive] = useState(false)
   const handleExplore = () => {
     window.open(url, '_blank')
@@ -14,8 +14,9 @@ export const ProjectBox: FunctionComponent<
   }
   return (
     <Box
+      className="project-card"
       sx={{
-        height: 280,
+        height: 350,
         width,
         position: 'relative',
         m: '0.5%',
@@ -23,11 +24,16 @@ export const ProjectBox: FunctionComponent<
         transition: 'transform 0.4s',
         '&:hover': {
           cursor: 'pointer',
-          transform: 'scale(1.12)',
+          transform: 'scale(1.12) !important',
           zIndex: 1,
           '.inactive-heading': {
             opacity: 1,
-            transform: 'translate(-50%, -50%)',
+            transform: 'translateY(200%)',
+            visibility: 'visible',
+          },
+          '.inactive-text': {
+            opacity: 1,
+            transform: 'translateY(100%)',
             visibility: 'visible',
           },
         },
@@ -66,25 +72,45 @@ export const ProjectBox: FunctionComponent<
               }}
             />
           </Flex>
-          <Heading
-            className="inactive-heading"
-            as="h2"
-            variant="styles.h2"
+          <Box
             sx={{
-              color: 'background',
+              width: '100%',
+              height: '100%',
               position: 'absolute',
-              whiteSpace: 'nowrap',
-              opacity: 0,
-              visibility: 'hidden',
+              top: 0,
               zIndex: 1,
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, 0%)',
-              transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
             }}
           >
-            {title}
-          </Heading>
+            <Heading
+              className="inactive-heading"
+              as="h2"
+              variant="styles.h2"
+              sx={{
+                color: 'background',
+                whiteSpace: 'nowrap',
+                opacity: 0,
+                visibility: 'hidden',
+                transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
+                transform: 'translateY(50%)',
+              }}
+            >
+              {title}
+            </Heading>
+            <Text
+              className="inactive-text"
+              as="p"
+              variant="styles.p"
+              sx={{
+                color: 'white',
+                opacity: 0,
+                visibility: 'hidden',
+                transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
+                transform: 'translateY(50%)',
+              }}
+            >
+              {description}
+            </Text>
+          </Box>
         </Box>
       ) : (
         // active state
