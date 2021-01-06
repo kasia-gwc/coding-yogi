@@ -7,14 +7,21 @@ const theme = {
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [16, 22, 25, 34, 44, 61],
+  fontSizes: [
+    '1rem',
+    '1.375rem',
+    '1.5625rem',
+    '2.125rem',
+    '2.75rem',
+    '3.8125rem',
+  ],
   fontWeights: {
     body: 200,
     heading: 400,
     bold: 400,
   },
   lineHeights: {
-    body: 1.5,
+    body: 1.25,
     heading: 1.125,
   },
   colors: {
@@ -119,7 +126,7 @@ const theme = {
   },
   layout: {
     container: {
-      width: '80%',
+      width: ['95%', '90%', '80%'],
       alignItems: 'center',
       justifyContent: 'center',
       display: 'flex',

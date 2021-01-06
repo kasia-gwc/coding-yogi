@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Box, Container, Flex, Grid, Heading } from 'theme-ui'
+import { Container, Flex, Heading } from 'theme-ui'
 import { ProjectBox } from '../ProjectBox/ProjectBox'
 import { itemsList } from './itemsList'
 import gsap from 'gsap'

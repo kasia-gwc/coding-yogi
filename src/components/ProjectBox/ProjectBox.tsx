@@ -17,23 +17,23 @@ export const ProjectBox: FunctionComponent<
       className="project-card"
       sx={{
         height: 350,
-        width,
+        width: ['100%', null, width],
         position: 'relative',
         m: '0.5%',
         textAlign: 'center',
         transition: 'transform 0.4s',
         '&:hover': {
           cursor: 'pointer',
-          transform: 'scale(1.12) !important',
+          transform: ['scale(1) !important', null, 'scale(1.12) !important'],
           zIndex: 1,
           '.inactive-heading': {
             opacity: 1,
-            transform: 'translateY(200%)',
+            transform: 'translateY(0%)',
             visibility: 'visible',
           },
           '.inactive-text': {
             opacity: 1,
-            transform: 'translateY(100%)',
+            transform: 'translateY(0%)',
             visibility: 'visible',
           },
         },
@@ -79,6 +79,10 @@ export const ProjectBox: FunctionComponent<
               position: 'absolute',
               top: 0,
               zIndex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+              display: 'flex',
+              flexDirection: 'column',
             }}
           >
             <Heading
@@ -88,10 +92,10 @@ export const ProjectBox: FunctionComponent<
               sx={{
                 color: 'background',
                 whiteSpace: 'nowrap',
-                opacity: 0,
-                visibility: 'hidden',
+                opacity: [1, null, 0],
+                visibility: ['visible', null, 'hidden'],
                 transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
-                transform: 'translateY(50%)',
+                transform: ['translateY(0)', null, 'translateY(50%)'],
               }}
             >
               {title}
@@ -102,10 +106,11 @@ export const ProjectBox: FunctionComponent<
               variant="styles.p"
               sx={{
                 color: 'white',
-                opacity: 0,
-                visibility: 'hidden',
-                transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
-                transform: 'translateY(50%)',
+                opacity: [1, null, 0],
+                visibility: ['visible', null, 'hidden'],
+                transition: 'opacity 0.4s 0.4s, transform 0.4s 0.4s',
+                fontSize: 0,
+                transform: ['translateY(0)', null, 'translateY(50%)'],
               }}
             >
               {description}

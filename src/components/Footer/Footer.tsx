@@ -96,9 +96,6 @@ export const Footer = (): JSX.Element => {
             mb: '30px',
             fontWeight: 'body',
             transition: '0.3s',
-            '&Link:hover': {
-              transform: 'scale(1.12)',
-            },
           }}
         >
           & <br />
@@ -108,7 +105,13 @@ export const Footer = (): JSX.Element => {
             target="_blank"
             sx={{
               textDecoration: 'none',
+              display: 'inline-block',
               fontWeight: 'heading',
+              transition: 'transform .2s',
+              fontSize: 'inherit',
+              '&:hover': {
+                transform: 'scale(1.12)',
+              },
             }}
           >
             Green Yoga
