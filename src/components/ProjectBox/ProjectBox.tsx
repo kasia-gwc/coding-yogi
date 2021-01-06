@@ -91,7 +91,7 @@ export const ProjectBox: FunctionComponent<
                 opacity: 0,
                 visibility: 'hidden',
                 transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
-                transform: 'translateY(50%)',
+                transform: 'translateY(70px)',
               }}
             >
               {title}
@@ -105,7 +105,7 @@ export const ProjectBox: FunctionComponent<
                 opacity: 0,
                 visibility: 'hidden',
                 transition: 'opacity 0.4s 0.2s, transform 0.4s 0.2s',
-                transform: 'translateY(50%)',
+                transform: 'translateY(30px)',
               }}
             >
               {description}

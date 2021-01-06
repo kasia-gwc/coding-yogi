@@ -78,7 +78,7 @@ export const Portfolio = (): JSX.Element => {
           mb: 5,
         }}
       >
-        portfolio
+        projects
       </Heading>
       <Flex sx={{ flexWrap: 'wrap', width: '100%' }}>
         {renderProjectBoxes()}
