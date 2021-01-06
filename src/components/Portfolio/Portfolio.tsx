@@ -65,20 +65,26 @@ export const Portfolio = (): JSX.Element => {
       ref={containerRef}
       id="portfolio"
       sx={{
-        position: 'relative',
+        // position: 'relative',
         mb: 6,
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'column',
       }}
     >
       <Heading
+        id="heading"
         as="h3"
         variant="styles.h3"
         sx={{
           color: 'secondary',
-          textAlign: 'center',
-          mb: 5,
+          textAlign: 'right',
+          mb: 6,
+          fontSize: '125px',
+          fontWeight: 'body',
         }}
       >
-        projects
+        my projects
       </Heading>
       <Flex sx={{ flexWrap: 'wrap', width: '100%' }}>
         {renderProjectBoxes()}

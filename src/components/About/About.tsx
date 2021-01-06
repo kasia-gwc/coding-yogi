@@ -10,6 +10,7 @@ export const About = (): JSX.Element => {
   useEffect(() => {
     const containerHTML = containerRef.current as HTMLDivElement
     if (containerRef.current) {
+      const heading = containerRef.current.querySelector('#heading')
       const aboutContent = containerRef.current.querySelector('.about-content')
       const aboutPicture = containerRef.current.querySelector('.about-picture')
       const tl = gsap.timeline({
@@ -23,16 +24,18 @@ export const About = (): JSX.Element => {
           // once: true,
         },
       })
-      tl.fromTo(
-        aboutContent,
-        { autoAlpha: 0, y: '35%' },
-        { autoAlpha: 1, y: '0%' }
-      ).fromTo(
-        aboutPicture,
-        { autoAlpha: 0, y: '35%' },
-        { autoAlpha: 1, y: '0%' },
-        0.5
-      )
+      tl.fromTo(heading, { autoAlpha: 0, x: '-10%' }, { autoAlpha: 1, x: '0%' })
+        .fromTo(
+          aboutContent,
+          { autoAlpha: 0, y: '35%' },
+          { autoAlpha: 1, y: '0%' }
+        )
+        .fromTo(
+          aboutPicture,
+          { autoAlpha: 0, y: '35%' },
+          { autoAlpha: 1, y: '0%' },
+          0.5
+        )
     }
   }, [])
   return (
@@ -51,11 +54,12 @@ export const About = (): JSX.Element => {
         }}
       >
         <Heading
+          id="heading"
           sx={{
             color: 'primary',
             mb: 4,
             textAlign: 'left',
-            fontWeight: 'bold',
+            fontWeight: 'body',
             fontSize: ['80px', '125px'],
           }}
         >
