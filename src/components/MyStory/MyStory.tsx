@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { stories } from './stories-data'
-import { Box, Grid, Heading, Image, Text } from 'theme-ui'
+import { Box, Container, Grid, Heading, Image, Text } from 'theme-ui'
 import mapboxgl from 'mapbox-gl'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -141,7 +141,7 @@ export const MyStory = (): JSX.Element => {
   }, [])
 
   return (
-    <Box
+    <Container
       id="my-story"
       ref={containerRef}
       sx={{ position: 'relative', width: '100%', height: '90vh' }}
@@ -182,15 +182,17 @@ export const MyStory = (): JSX.Element => {
               sx={{
                 color: 'primary',
                 position: 'absolute',
-                textAlign: 'center',
+                textAlign: 'left',
                 top: ['0', '50px'],
                 width: '100%',
+                fontSize: ['80px', '125px'],
+                fontWeight: 'body',
               }}
             >
-              my story...
+              my story
             </Heading>
           )}
-          <Box sx={{ placeSelf: 'center', width: 250, height: 250 }}>
+          <Box sx={{ placeSelf: 'center', width: 250, height: 250, mt: '30px' }}>
             <Image
               className={`image-${index}`}
               src={image}
@@ -225,6 +227,6 @@ export const MyStory = (): JSX.Element => {
           </Box>
         </Grid>
       ))}
-    </Box>
+    </Container>
   )
 }

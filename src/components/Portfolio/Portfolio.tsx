@@ -69,7 +69,6 @@ export const Portfolio = (): JSX.Element => {
         mb: 6,
         display: 'flex',
         width: '100%',
-        flexDirection: 'column',
       }}
     >
       <Heading
@@ -79,12 +78,13 @@ export const Portfolio = (): JSX.Element => {
         sx={{
           color: 'secondary',
           textAlign: 'right',
-          mb: 6,
-          fontSize: '125px',
+          mb: 5,
+          fontSize: ['80px', '125px'],
           fontWeight: 'body',
+          marginLeft: 'auto',
         }}
       >
-        my projects
+        projects
       </Heading>
       <Flex sx={{ flexWrap: 'wrap', width: '100%' }}>
         {renderProjectBoxes()}
