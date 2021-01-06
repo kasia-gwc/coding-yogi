@@ -7,10 +7,9 @@ import mapboxgl from 'mapbox-gl'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 gsap.registerPlugin(ScrollTrigger)
 
-mapboxgl.accessToken = process.env.GATSBY_MAPBOX_ACCESS_TOKEN as string
-
 export const MyStory = (): JSX.Element => {
-  const breakpoint = useBreakpointIndex()
+  const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
+  const mapRefEl = useRef<HTMLDivElement>(null)
   /**
    * 1. render all the boxes (divs) and match the desig to reflect Figma with a proper division on how it will look on the website
    * 1.a mapping over the stories data to render two boxes (one for an image and one for the text) in a grid
@@ -36,8 +35,10 @@ export const MyStory = (): JSX.Element => {
   }
   useEffect(() => {
     if (!mapRef.current) {
+      mapboxgl.accessToken = process.env.GATSBY_MAPBOX_ACCESS_TOKEN as string
+
       mapRef.current = new mapboxgl.Map({
-        container: 'map',
+        container: mapRefEl.current as any,
         style: 'mapbox://styles/kasia-msg/ckjbt8a62jn2l1at462glaz06', // stylesheet location
         center: [51.93, 20.39], // starting position [lng, lat]
         zoom: breakpoint > 1 ? 3 : 2, // starting zoom
@@ -159,7 +160,11 @@ export const MyStory = (): JSX.Element => {
           },
         }}
       >
-        <Box id="map" sx={{ height: ['40vh', '100vh'], width: '100%' }} />
+        <Box
+          ref={mapRefEl}
+          id="map"
+          sx={{ height: ['40vh', '100vh'], width: '100%' }}
+        />
       </Box>
       {stories.map(({ title, description, image, pin }, index) => (
         <Grid

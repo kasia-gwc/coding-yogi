@@ -7,7 +7,7 @@ import { NavbarContext } from './NavbarContext'
 
 export const Navbar = (): JSX.Element => {
   const [lightNav, setLightNav] = useState(false)
-  const breakpoint = useBreakpointIndex()
+  const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
   const defaultValues = { lightNav }
 
   const updateLightNav = useCallback(() => {

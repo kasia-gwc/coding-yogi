@@ -1,12 +1,7 @@
-import React, {
-  MouseEvent,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
+/** @jsx jsx */
+import { MouseEvent, useCallback, useContext, useEffect, useState } from 'react'
 import { menuItems } from '../menuItems'
-import { Box, Flex, Link } from 'theme-ui'
+import { jsx, Box, Flex, Link } from 'theme-ui'
 import { Logo } from '../../Logo/Logo'
 import { NavbarContext } from '../NavbarContext'
 
@@ -66,6 +61,7 @@ export const NavbarDesktop = (): JSX.Element => {
         py: 2,
         px: 4,
         transition: 'background-color .3s',
+        flexWrap: 'wrap',
       }}
     >
       <Logo variant={lightNav ? 'dark' : 'light'} />
