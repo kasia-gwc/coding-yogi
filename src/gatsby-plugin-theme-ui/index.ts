@@ -1,20 +1,37 @@
 const theme = {
   breakpoints: ['40em', '56em', '64em'],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [
+    0,
+    '0.2rem',
+    '0.4rem',
+    '1rem',
+    '1.6rem',
+    '3.2rem',
+    '6.4rem',
+    '12.8rem',
+    '25.6rem',
+  ],
   fonts: {
     body:
       'Josefin Sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
-  fontSizes: [16, 22, 25, 34, 44, 61],
+  fontSizes: [
+    '1rem',
+    '1.375rem',
+    '1.5625rem',
+    '2.125rem',
+    '2.75rem',
+    '3.8125rem',
+  ],
   fontWeights: {
     body: 200,
     heading: 400,
     bold: 400,
   },
   lineHeights: {
-    body: 1.5,
+    body: 1.25,
     heading: 1.125,
   },
   colors: {
@@ -80,6 +97,7 @@ const theme = {
       fontWeight: 'body',
       lineHeight: 'body',
       fontSize: [0, 1],
+      mb: 3,
     },
     a: {
       color: 'primary',
@@ -119,12 +137,13 @@ const theme = {
   },
   layout: {
     container: {
-      width: '80%',
+      width: ['95%', '90%', '80%'],
       alignItems: 'center',
       justifyContent: 'center',
       display: 'flex',
       flexDirection: 'column',
       mt: 5,
+      px: [4, 2],
     },
   },
   buttons: {

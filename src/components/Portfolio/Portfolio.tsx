@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Box, Container, Flex, Grid, Heading } from 'theme-ui'
+import { Container, Flex, Heading } from 'theme-ui'
 import { ProjectBox } from '../ProjectBox/ProjectBox'
 import { itemsList } from './itemsList'
 import gsap from 'gsap'
@@ -45,14 +45,14 @@ export const Portfolio = (): JSX.Element => {
           //equality and type check - always triple '='
           tl.fromTo(
             box,
-            { autoAlpha: 0, x: '-20%' },
+            { autoAlpha: 0, x: '-15%' },
             { autoAlpha: 1, x: '0%' },
             '0'
           )
         } else {
           tl.fromTo(
             box,
-            { autoAlpha: 0, x: '20%' },
+            { autoAlpha: 0, x: '15%' },
             { autoAlpha: 1, x: '0%' },
             '0'
           )

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
-import { Text, Heading, Container, Flex, Box } from 'theme-ui'
-import { Carousel } from '../Carousel/Carousel'
+import { Text, Heading, Container, Grid, Image, Box } from 'theme-ui'
+// import { Carousel } from '../Carousel/Carousel'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
@@ -11,7 +11,7 @@ export const About = (): JSX.Element => {
     const containerHTML = containerRef.current as HTMLDivElement
     if (containerRef.current) {
       const aboutContent = containerRef.current.querySelector('.about-content')
-      const carousel = containerRef.current.querySelector('.carousel')
+      const aboutPicture = containerRef.current.querySelector('.about-picture')
       const tl = gsap.timeline({
         defaults: {
           duration: 1.5,
@@ -28,7 +28,7 @@ export const About = (): JSX.Element => {
         { autoAlpha: 0, y: '35%' },
         { autoAlpha: 1, y: '0%' }
       ).fromTo(
-        carousel,
+        aboutPicture,
         { autoAlpha: 0, y: '35%' },
         { autoAlpha: 1, y: '0%' },
         0.5
@@ -36,56 +36,66 @@ export const About = (): JSX.Element => {
     }
   }, [])
   return (
-    <Container id="about" ref={containerRef}>
-      <Heading
-        as="h3"
-        variant="styles.h3"
+    <Container
+      id="about"
+      ref={containerRef}
+      sx={{
+        width: '100%',
+      }}
+    >
+      <Box
         sx={{
-          color: 'primary',
-          mb: 5,
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        about me
-      </Heading>
-      <Flex
-        sx={{
-          justifyContent: 'center',
-        }}
-      >
-        <Text
-          className="about-content"
-          as="p"
-          variant="styles.p"
+        <Heading
           sx={{
-            maxWidth: ['100%', '36%', 'auto'],
-            textAlign: 'center',
+            color: 'primary',
+            mb: 4,
+            textAlign: 'left',
+            fontWeight: 'bold',
+            fontSize: ['80px', '125px'],
           }}
         >
-          If I don’t sit cross-legged I salute the sun. I walk barefoot feeling
-          the earth beneath & grounding myself. I take every breath with
-          gratitude to my life journey. Somewhere between unpacking my backpack
-          and saving another album from my travels, I decided to combine my need
-          for stimulation, movement and cultural education with learning coding.
-          I have found ultimate fulfilment in creativity of the frontend and
-          grounding with raw coding principles.
-        </Text>
+          about me
+        </Heading>
         <Box
-          className="carousel"
+          className="about-content"
           sx={{
-            maxWidth: [450, null, '100%'],
-            height: '100%',
-            maxHeight: 450,
-            width: ['100%', '58%'],
-            ml: 'auto',
-            position: 'relative',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            maxWidth: ['100%', '550px'],
+            textAlign: 'left',
+            marginLeft: 'auto',
+            marginBottom: 5,
           }}
         >
-          <Carousel />
+          <Text as="p" variant="styles.p">
+            Hello, you!
+          </Text>
+          <Text as="p" variant="styles.p">
+            Thanks for dropping by! I’m Kasia - psychology graduate & people
+            person, avid traveller & yoga teacher, currently shifting my career
+            into web development.
+          </Text>
+          <Text as="p" variant="styles.p">
+            Welcome to my space. I invite you to relax your shoulders, take a
+            deep breath in -- hold on top and exhale all the tension. Now scroll
+            down to see my work and my story.
+          </Text>
         </Box>
-      </Flex>
+      </Box>
+      <Image
+        src="/image/GY.jpg"
+        className="about-picture"
+        sx={{
+          maxWidth: '650px',
+          width: '100%',
+          mr: 'auto',
+        }}
+      >
+        {/* <Carousel /> */}
+      </Image>
     </Container>
   )
 }

@@ -3,7 +3,7 @@ import { jsx } from 'theme-ui'
 import { motion } from 'framer-motion'
 import { MenuItem } from './MenuItem/MenuItem'
 import { menuItems } from '../../menuItems'
-import { FunctionComponent, MouseEvent, useEffect } from 'react'
+import { FunctionComponent, MouseEvent } from 'react'
 import { MenuProps } from './Menu.model'
 const variants = {
   open: {

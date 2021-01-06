@@ -183,7 +183,7 @@ export const MyStory = (): JSX.Element => {
                 color: 'primary',
                 position: 'absolute',
                 textAlign: 'center',
-                top: ['0', '60px'],
+                top: ['0', '50px'],
                 width: '100%',
               }}
             >
