@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://www.kash.com`,
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
