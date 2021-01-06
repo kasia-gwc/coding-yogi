@@ -27,7 +27,7 @@ export const NavbarMobile: FunctionComponent = (): JSX.Element => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const { lightNav } = useContext(NavbarContext)
   return (
-    <Box sx={{ p: 3 }}>
+    <Box sx={{ p: [2, 3] }}>
       <Flex sx={{ position: 'relative', zIndex: 1 }}>
         <Logo variant={isOpen || lightNav ? 'primary' : 'light'} />
         <motion.div

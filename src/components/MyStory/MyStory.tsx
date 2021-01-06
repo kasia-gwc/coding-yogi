@@ -4,11 +4,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { stories } from './stories-data'
 import { Box, Container, Grid, Heading, Image, Text } from 'theme-ui'
 import mapboxgl from 'mapbox-gl'
+import { useBreakpointIndex } from '@theme-ui/match-media'
 gsap.registerPlugin(ScrollTrigger)
 
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_ACCESS_TOKEN as string
 
 export const MyStory = (): JSX.Element => {
+  const breakpoint = useBreakpointIndex()
   /**
    * 1. render all the boxes (divs) and match the desig to reflect Figma with a proper division on how it will look on the website
    * 1.a mapping over the stories data to render two boxes (one for an image and one for the text) in a grid
@@ -38,7 +40,7 @@ export const MyStory = (): JSX.Element => {
         container: 'map',
         style: 'mapbox://styles/kasia-msg/ckjbt8a62jn2l1at462glaz06', // stylesheet location
         center: [51.93, 20.39], // starting position [lng, lat]
-        zoom: 4, // starting zoom
+        zoom: breakpoint > 1 ? 3 : 2, // starting zoom
         interactive: false,
       })
 
@@ -62,102 +64,102 @@ export const MyStory = (): JSX.Element => {
         }
       })
     }
-  }, [])
+  }, [breakpoint])
   useEffect(() => {
-    const containerHtml = containerRef.current as HTMLDivElement
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerHtml, //we want the render to happen when it hits this div, the scroll takes over
-        pin: true,
-        start: 'top top', // we want the animation to start when the top of the element hist sthe top of the screen - 1st top is top of the div, 2nd is top of the screen
-        end: window.innerHeight * stories.length, // we specifying when the scrollTrigger should end - after all the stories
-        scrub: 1, //speed of the animation being slightly behind
-        snap: {
-          snapTo: 'labels',
+    setTimeout(() => {
+      const containerHtml = containerRef.current as HTMLDivElement
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerHtml, //we want the render to happen when it hits this div, the scroll takes over
+          pin: true,
+          start: 'top top', // we want the animation to start when the top of the element hist sthe top of the screen - 1st top is top of the div, 2nd is top of the screen
+          end: window.innerHeight * stories.length, // we specifying when the scrollTrigger should end - after all the stories
+          scrub: 1, //speed of the animation being slightly behind
+          snap: {
+            snapTo: 'labels',
+          },
         },
-      },
-    })
+      })
 
-    const storyBoxes: HTMLDivElement[] = Array.from(
-      containerHtml.querySelectorAll('.story') //we convert it into an array as before it was giving a node list and we gave it a className 'story'
-    )
-    storyBoxes.forEach((child, index) => {
-      //it's for the animation part, we're iterating over the HTML to add an animation to each box
-      const titleElement = child.querySelector('.title')
-      const descElement = child.querySelector('.desc')
-      const flowerElement = child.querySelector('img')
-      const lat = parseFloat(child.dataset.lat || '0')
-      const lng = parseFloat(child.dataset.lng || '0')
-      tl.add(
-        gsap.fromTo(
-          titleElement,
-          { autoAlpha: 0, y: '200%' },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 2,
-            onStart: () => flyTo(lat, lng),
-          }
-        ),
-        index > 0 ? '-=0.5' : '0'
-      ).add(
-        // animate description from the bottom
-        gsap.fromTo(
-          descElement,
-          { autoAlpha: 0, y: '300%' },
-          { autoAlpha: 1, y: 0, duration: 1 }
-        ),
-        '-=0.1'
+      const storyBoxes: HTMLDivElement[] = Array.from(
+        containerHtml.querySelectorAll('.story') //we convert it into an array as before it was giving a node list and we gave it a className 'story'
       )
-      if (index > 0) {
+      storyBoxes.forEach((child, index) => {
+        //it's for the animation part, we're iterating over the HTML to add an animation to each box
+        const titleElement = child.querySelector('.title')
+        const descElement = child.querySelector('.desc')
+        const flowerElement = child.querySelector('img')
+        const lat = parseFloat(child.dataset.lat || '0')
+        const lng = parseFloat(child.dataset.lng || '0')
         tl.add(
-          gsap.to(containerHtml.querySelector(`.image-${index - 1}`), {
-            autoAlpha: 0,
-            onReverseComplete: () =>
-              flyTo(
-                storyBoxes[index - 1].dataset.lat as any,
-                storyBoxes[index - 1].dataset.lng as any
-              ),
+          gsap.fromTo(
+            titleElement,
+            { autoAlpha: 0, y: '200%' },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 2,
+              onStart: () => flyTo(lat, lng),
+            }
+          ),
+          index > 0 ? '-=0.5' : '0'
+        ).add(
+          // animate description from the bottom
+          gsap.fromTo(
+            descElement,
+            { autoAlpha: 0, y: '300%' },
+            { autoAlpha: 1, y: 0, duration: 1 }
+          ),
+          '-=0.1'
+        )
+        if (index > 0) {
+          tl.add(
+            gsap.to(containerHtml.querySelector(`.image-${index - 1}`), {
+              autoAlpha: 0,
+              onReverseComplete: () =>
+                flyTo(
+                  storyBoxes[index - 1].dataset.lat as any,
+                  storyBoxes[index - 1].dataset.lng as any
+                ),
+            }),
+            '<'
+          )
+        }
+        tl.add(
+          gsap.to(flowerElement, {
+            autoAlpha: 1,
           }),
           '<'
-        )
-      }
-      tl.add(
-        gsap.to(flowerElement, {
-          autoAlpha: 1,
-        }),
-        '<'
-      ).addLabel(`slide-${index}`)
-      if (index !== stories.length - 1) {
-        tl.add(
-          gsap.to(titleElement, { autoAlpha: 0, y: '-250%', duration: 1 })
-        ).add(gsap.to(descElement, { autoAlpha: 0, y: '-150%' }), '-=0.1')
-      }
-    })
-
-    return () => {
-      tl.kill()
-    }
+        ).addLabel(`slide-${index}`)
+        if (index !== stories.length - 1) {
+          tl.add(
+            gsap.to(titleElement, { autoAlpha: 0, y: '-250%', duration: 1 })
+          ).add(gsap.to(descElement, { autoAlpha: 0, y: '-150%' }), '-=0.1')
+        }
+      })
+    }, 500)
   }, [])
 
   return (
     <Container
       id="my-story"
       ref={containerRef}
-      sx={{ position: 'relative', width: '100%', height: '90vh' }}
+      sx={{ position: 'relative', width: '100%', height: '100vh' }}
     >
       <Box
         sx={{
-          height: '80vh',
+          height: ['40vh', '100vh'],
           position: 'absolute',
-          width: '40%',
+          width: ['100%', '40%'],
           right: 0,
+          bottom: 0,
+          zIndex: 99999,
           '.mapboxgl-ctrl': {
             display: 'none !important',
           },
         }}
       >
-        <Box id="map" sx={{ height: '100vh', width: '100%' }} />
+        <Box id="map" sx={{ height: ['40vh', '100vh'], width: '100%' }} />
       </Box>
       {stories.map(({ title, description, image, pin }, index) => (
         <Grid
@@ -165,11 +167,12 @@ export const MyStory = (): JSX.Element => {
           data-lat={pin.lat}
           data-lng={pin.lng}
           sx={{
-            gridTemplateColumns: '20% 35% 45%',
-            height: '100vh',
+            gridTemplateColumns: ['1fr', '20% 35% 45%'],
+            height: ['60vh', '100vh'],
             width: '100%',
-            placeContent: 'center',
+            placeContent: ['start', 'center'],
             position: 'absolute',
+            top: ['2.5rem', '2rem'],
             zIndex: 1,
             bg: 'transparent',
           }}
@@ -182,24 +185,34 @@ export const MyStory = (): JSX.Element => {
               sx={{
                 color: 'primary',
                 position: 'absolute',
-                textAlign: 'left',
+                textAlign: ['center', 'left'],
                 top: ['0', '50px'],
                 width: '100%',
-                fontSize: ['80px', '125px'],
+                fontSize: ['3rem', '6.25rem'],
                 fontWeight: 'body',
+                mt: [0, '30px'],
               }}
             >
               my story
             </Heading>
           )}
-          <Box sx={{ placeSelf: 'center', width: 250, height: 250, mt: '30px' }}>
+          <Box
+            sx={{
+              placeSelf: ['center', 'end'],
+              width: [100, 150, 250],
+              height: [100, 150, 250],
+              mt: ['3.5rem', '1.5rem'],
+            }}
+          >
             <Image
               className={`image-${index}`}
               src={image}
               sx={{ opacity: 0, visibility: 'hidden' }}
             />
           </Box>
-          <Box>
+          <Box
+            sx={{ textAlign: ['center', 'left'], maxWidth: 300, mx: 'auto' }}
+          >
             <Heading
               className="title"
               as="h3"
