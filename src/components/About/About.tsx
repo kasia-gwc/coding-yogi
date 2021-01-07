@@ -15,7 +15,7 @@ export const About = (): JSX.Element => {
       const aboutPicture = containerRef.current.querySelector('.about-picture')
       const tl = gsap.timeline({
         defaults: {
-          duration: 1.5,
+          duration: 1,
           ease: 'power1.out',
         },
         scrollTrigger: {
@@ -28,7 +28,8 @@ export const About = (): JSX.Element => {
         .fromTo(
           aboutContent,
           { autoAlpha: 0, y: '35%' },
-          { autoAlpha: 1, y: '0%' }
+          { autoAlpha: 1, y: '0%' },
+          '<'
         )
         .fromTo(
           aboutPicture,

@@ -7,20 +7,21 @@ import mapboxgl from 'mapbox-gl'
 import { useBreakpointIndex } from '@theme-ui/match-media'
 gsap.registerPlugin(ScrollTrigger)
 
+/**
+ * 1. render all the boxes (divs) and match the desig to reflect Figma with a proper division on how it will look on the website
+ * 1.a mapping over the stories data to render two boxes (one for an image and one for the text) in a grid
+ * 2. import gsap and register ScrollTrigger
+ * 3. to make gsap work we need an HTML element so we used useRef and initiated as null (always do it)
+ * 4. when no 1 happens then null in no 3. will be automatically assigned to the ref we specified in the JSX
+ * [.current - when you want to access the value]
+ * 5. when we want to access the value of the HTML container (here containerRef) we need to use .current and then save it in the new const 'containerHTML' and give the type of the element for TS HTMLDivElement
+ * 6. we're initiating a timeline and a scrollTrigger inside the timeline and saved the reference of the timeline in the const 'tl' and gave some attributes to scrollTrigger
+ * we put the code inside the useEffect so that the rendering part is taking place before the logic takes place
+ */
+
 export const MyStory = (): JSX.Element => {
   const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
   const mapRefEl = useRef<HTMLDivElement>(null)
-  /**
-   * 1. render all the boxes (divs) and match the desig to reflect Figma with a proper division on how it will look on the website
-   * 1.a mapping over the stories data to render two boxes (one for an image and one for the text) in a grid
-   * 2. import gsap and register ScrollTrigger
-   * 3. to make gsap work we need an HTML element so we used useRef and initiated as null (always do it)
-   * 4. when no 1 happens then null in no 3. will be automatically assigned to the ref we specified in the JSX
-   * [.current - when you want to access the value]
-   * 5. when we want to access the value of the HTML container (here containerRef) we need to use .current and then save it in the new const 'containerHTML' and give the type of the element for TS HTMLDivElement
-   * 6. we're initiating a timeline and a scrollTrigger inside the timeline and saved the reference of the timeline in the const 'tl' and gave some attributes to scrollTrigger
-   * we put the code inside the useEffect so that the rendering part is taking place before the logic takes place
-   */
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<mapboxgl.Map>()
   const flyTo = (lat: number, lng: number) => {
@@ -33,6 +34,23 @@ export const MyStory = (): JSX.Element => {
       })
     }
   }
+  useEffect(() => {
+    const containerHTML = containerRef.current as HTMLDivElement
+    const heading = containerHTML.querySelector('#heading')
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerHTML,
+        start: 'top 80%',
+      },
+    })
+    tl.fromTo(
+      heading,
+      { autoAlpha: 0, x: '-20%' },
+      { autoAlpha: 1, x: '0%' },
+      0
+    )
+  })
+
   useEffect(() => {
     if (!mapRef.current) {
       mapboxgl.accessToken = process.env.GATSBY_MAPBOX_ACCESS_TOKEN as string
@@ -186,16 +204,17 @@ export const MyStory = (): JSX.Element => {
           {index === 0 && (
             <Heading
               as="h3"
+              id="heading"
               variant="styles.h3"
               sx={{
                 color: 'primary',
                 position: 'absolute',
                 textAlign: ['center', 'left'],
-                top: ['0', '50px'],
+                top: '0',
                 width: '100%',
                 fontSize: ['3rem', '6.25rem'],
                 fontWeight: 'body',
-                mt: [0, '30px'],
+                mt: 0,
               }}
             >
               my story

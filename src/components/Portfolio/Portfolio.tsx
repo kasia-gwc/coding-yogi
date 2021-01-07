@@ -29,6 +29,9 @@ export const Portfolio = (): JSX.Element => {
   }
   const containerRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
+    const heading = containerRef.current?.querySelector(
+      '#heading'
+    ) as HTMLDivElement
     const containerHTML = containerRef.current as HTMLDivElement
     if (containerRef.current) {
       const boxes: HTMLDivElement[] = Array.from(
@@ -40,6 +43,7 @@ export const Portfolio = (): JSX.Element => {
           start: 'top center',
         },
       })
+      tl.fromTo(heading, { autoAlpha: 0, x: '25%' }, { autoAlpha: 1, x: '0%' })
       boxes.forEach((box, index) => {
         if (index % 2 === 0) {
           //equality and type check - always triple '='

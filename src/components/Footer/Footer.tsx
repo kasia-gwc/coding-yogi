@@ -12,21 +12,22 @@ export const Footer = (): JSX.Element => {
         sx={{
           position: 'relative',
           flexDirection: 'column',
+          width: '100%',
         }}
       >
         <Heading
-          as="h3"
-          variant="styles.h3"
           sx={{
             color: 'secondary',
             textAlign: 'center',
             mb: '20px',
             mt: '40px',
+            fontSize: '3rem',
+            fontWeight: 'body',
           }}
         >
           contact me
         </Heading>
-        <Flex sx={{ justifyContent: 'center', mb: '50px' }}>
+        <Flex sx={{ justifyContent: 'center', mb: '30px' }}>
           {footerItems.map((footerItem, index) => (
             // eslint-disable-next-line react/jsx-key
             <Box key={footerItem.title}>
@@ -69,7 +70,7 @@ export const Footer = (): JSX.Element => {
                 sx={{
                   display: ['block', 'none'],
                   cursor: 'pointer',
-                  m: 2,
+                  // m: 2,
                   p: 1,
                   transition: '0.3s',
                   '&:hover': {
@@ -87,36 +88,51 @@ export const Footer = (): JSX.Element => {
             </Box>
           ))}
         </Flex>
-        <Heading
+        <Box
           as="h3"
           variant="styles.h3"
           sx={{
-            color: 'secondary',
-            textAlign: 'center',
-            mb: '30px',
+            color: 'text',
             fontWeight: 'body',
-            transition: '0.3s',
+            justifyContent: 'center',
+            display: 'flex',
+            mb: '20px',
           }}
         >
-          & <br />
-          join my yoga classes at{' '}
-          <Link
-            href={greenyoga.url}
-            target="_blank"
+          &
+        </Box>
+        <Box>
+          <Heading
+            as="h3"
+            variant="styles.h3"
             sx={{
-              textDecoration: 'none',
-              display: 'inline-block',
-              fontWeight: 'heading',
-              transition: 'transform .2s',
-              fontSize: 'inherit',
-              '&:hover': {
-                transform: 'scale(1.12)',
-              },
+              color: 'secondary',
+              textAlign: 'center',
+              mb: '30px',
+              fontWeight: 'body',
+              transition: '0.3s',
             }}
           >
-            Green Yoga
-          </Link>
-        </Heading>
+            join my yoga classes at{' '}
+            <Link
+              href={greenyoga.url}
+              target="_blank"
+              sx={{
+                textDecoration: 'none',
+                display: 'inline-block',
+                fontWeight: 'heading',
+                transition: 'transform .2s',
+                fontSize: 'inherit',
+                '&:hover': {
+                  transform: 'scale(1.1)',
+                },
+              }}
+            >
+              Green Yoga
+            </Link>
+          </Heading>
+        </Box>
+
         <Box
           sx={{
             justifyContent: 'center',
