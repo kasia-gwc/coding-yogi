@@ -95,6 +95,11 @@ export const MyStory = (): JSX.Element => {
           end: window.innerHeight * stories.length, // we specifying when the scrollTrigger should end - after all the stories
           scrub: 1, //speed of the animation being slightly behind
           snap: {
+            duration: {
+              min: 0.25,
+              max: 0.25,
+            },
+            ease: 'linear' as any,
             snapTo: 'labels',
           },
         },
@@ -167,7 +172,7 @@ export const MyStory = (): JSX.Element => {
     >
       <Box
         sx={{
-          height: ['40vh', '100vh'],
+          height: ['calc(100vh * 0.3)', '100vh'],
           position: 'absolute',
           width: ['100%', '40%'],
           right: 0,
@@ -181,7 +186,7 @@ export const MyStory = (): JSX.Element => {
         <Box
           ref={mapRefEl}
           id="map"
-          sx={{ height: ['40vh', '100vh'], width: '100%' }}
+          sx={{ height: ['calc(100vh * 0.3)', '100vh'], width: '100%' }}
         />
       </Box>
       {stories.map(({ title, description, image, pin }, index) => (
@@ -222,9 +227,9 @@ export const MyStory = (): JSX.Element => {
           )}
           <Box
             sx={{
-              placeSelf: ['center', 'end'],
+              placeSelf: 'center',
               width: [100, 150, 250],
-              height: [100, 150, 250],
+              height: [50, 150, 250],
               mt: ['3.5rem', '1.5rem'],
             }}
           >
