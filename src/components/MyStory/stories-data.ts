@@ -2,7 +2,7 @@ export const stories = [
   {
     title: 'Poland 🇵🇱',
     description:
-      'Everything started here - my full education, first professional experience, my passion for yoga and travels.',
+      'Everything started here - my education, first professional experience, my passion for yoga and travels.',
     image: '/image/petals/petal-1.png',
     pin: {
       lng: 51.93,
@@ -12,7 +12,7 @@ export const stories = [
   {
     title: 'China 🇨🇳',
     description:
-      '... is where I booked my first solo trip (one-way) to volunteer in an environmental project of cleaning the ocean and to teach English Chinese children.',
+      '... is where I booked my first one-way solo trip to volunteer in an environmental project of cleaning the ocean and to teach English Chinese children.',
     image: '/image/petals/petal-2.png',
     pin: {
       lng: 31,
@@ -51,7 +51,7 @@ export const stories = [
   {
     title: 'India 🇮🇳',
     description:
-      'Called me home again to learn yoga at the source and become cerrified yoga teacher. What a great start to this unforgettable 2020!',
+      'Called me home again to learn yoga at the source and become cerrified yoga teacher. What a remarkable start to this unforgettable 2020!',
     image: '/image/petals/petal-6.png',
     pin: {
       lng: 10.59,
@@ -61,7 +61,7 @@ export const stories = [
   {
     title: 'Germany 🇩🇪',
     description:
-      'Yoga carried me throughout 2020 and gave me motivation to sit and learn coding under the lockdown, find Le Wagon and in few months become a <b>coding yogi</b>!',
+      'Yoga carried me throughout 2020 and gave me motivation to sit and learn coding under the lockdown. Then I found Le Wagon and in few months become a <b>coding yogi</b>!',
     image: '/image/petals/petal-7.png',
     pin: {
       lng: 52.17,

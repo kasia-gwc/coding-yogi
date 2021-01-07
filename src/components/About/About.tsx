@@ -85,8 +85,8 @@ export const About = (): JSX.Element => {
           </Text>
           <Text as="p" variant="styles.p">
             Welcome to my space. I invite you to relax your shoulders, take a
-            deep breath in -- hold on top and exhale all the tension. Now scroll
-            down to see my work and my story.
+            deep breath in -- hold on top and exhale all the tension. Feel free to scroll
+            down to see some of my work and read my story.
           </Text>
         </Box>
       </Box>
