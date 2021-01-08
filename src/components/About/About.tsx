@@ -84,9 +84,9 @@ export const About = (): JSX.Element => {
             into web development.
           </Text>
           <Text as="p" variant="styles.p">
-            Welcome to my space. I invite you to relax your shoulders, take a
-            deep breath in -- hold on top and exhale all the tension. Feel free to scroll
-            down to see some of my work and read my story.
+            Welcome to my space. I invite you to have a look at the projects I 
+            delivered during last summer bootcamp at Le Wagon. The page you're visiting is my first frontend baby.
+           If you like what you see, feel free to contact me on the section below.
           </Text>
         </Box>
       </Box>
