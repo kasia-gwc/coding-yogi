@@ -91,7 +91,7 @@ export const About = (): JSX.Element => {
         </Box>
       </Box>
       <Image
-        src="/image/GY.jpg"
+        src="/image/GY-min.jpg"
         className="about-picture"
         sx={{
           maxWidth: '650px',
