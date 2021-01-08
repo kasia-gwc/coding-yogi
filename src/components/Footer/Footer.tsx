@@ -1,6 +1,6 @@
 import { transform } from 'framer-motion'
 import React from 'react'
-import { Box, Container, Flex, Heading, Link, Image } from 'theme-ui'
+import { Box, Container, Flex, Heading, Link, Image, Text } from 'theme-ui'
 import { Logo } from '../Logo/Logo'
 import { footerItems, greenyoga } from './footerItems'
 
@@ -147,6 +147,7 @@ export const Footer = (): JSX.Element => {
           <Logo variant="dark" />
         </Box>
       </Flex>
+      <Text as="p">Created with 🕉 by Kasia</Text>
     </Container>
   )
 }
