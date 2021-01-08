@@ -81,7 +81,7 @@ export const Footer = (): JSX.Element => {
                 <Image
                   src={footerItem.image}
                   sx={{
-                    height: '42px',
+                    height: '38px',
                   }}
                 />
               </Link>
@@ -147,7 +147,7 @@ export const Footer = (): JSX.Element => {
           <Logo variant="dark" />
         </Box>
       </Flex>
-      <Text as="p">Created with 🕉 by Kasia</Text>
+      <Text sx={{ fontSize: '1rem'}}>Created with 🕉 by Kasia</Text>
     </Container>
   )
 }

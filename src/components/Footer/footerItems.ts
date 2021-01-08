@@ -2,7 +2,7 @@ export const footerItems = [
   {
     title: 'email',
     url: 'mailto:kasia.msg@gmail.com',
-    image: '/image/contact-icons/paper-plane.svg',
+    image: '/image/contact-icons/telegram.svg',
   },
   {
     title: 'github',
