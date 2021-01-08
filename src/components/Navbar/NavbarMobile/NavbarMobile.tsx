@@ -29,11 +29,13 @@ export const NavbarMobile: FunctionComponent = (): JSX.Element => {
   return (
     <Box sx={{ p: [2, 3] }}>
       <Flex sx={{ position: 'relative', zIndex: 1 }}>
-        <Logo variant={isOpen || lightNav ? 'primary' : 'light'} />
+        <div>
+          <Logo variant={isOpen || lightNav ? 'primary' : 'light'} />
+        </div>
         <motion.div
           initial={false}
           animate={isOpen ? 'open' : 'closed'}
-          sx={{ ml: 'auto', display: 'flex', mr: '15px' }}
+          sx={{ ml: 'auto', display: 'flex', mr: '15px', alignSelf: 'center' }}
         >
           <MenuToggle toggle={toggleOpen} isOpen={isOpen} />
         </motion.div>

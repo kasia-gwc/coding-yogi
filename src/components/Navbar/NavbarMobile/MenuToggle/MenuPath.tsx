@@ -11,7 +11,6 @@ type MenuPathProps = {
 export const MenuPath: FunctionComponent<MenuPathProps> = ({
   ...restProps
 }): JSX.Element => {
-  console.log(restProps.variants)
   return (
     <motion.path
       fill="transparent"

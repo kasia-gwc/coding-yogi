@@ -4,7 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { stories } from './stories-data'
 import { Box, Container, Grid, Heading, Image, Text } from 'theme-ui'
 import mapboxgl from 'mapbox-gl'
-import { useBreakpointIndex } from '@theme-ui/match-media'
+import { useMediaQuery } from 'react-responsive'
+import theme from '../../gatsby-plugin-theme-ui'
 gsap.registerPlugin(ScrollTrigger)
 
 /**
@@ -20,7 +21,9 @@ gsap.registerPlugin(ScrollTrigger)
  */
 
 export const MyStory = (): JSX.Element => {
-  const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[1]})`,
+  })
   const mapRefEl = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<mapboxgl.Map>()
@@ -59,7 +62,7 @@ export const MyStory = (): JSX.Element => {
         container: mapRefEl.current as any,
         style: 'mapbox://styles/kasia-msg/ckjbt8a62jn2l1at462glaz06', // stylesheet location
         center: [51.93, 20.39], // starting position [lng, lat]
-        zoom: breakpoint > 1 ? 3 : 2, // starting zoom
+        zoom: isMobile ? 2 : 3, // starting zoom
         interactive: false,
       })
 
@@ -83,7 +86,7 @@ export const MyStory = (): JSX.Element => {
         }
       })
     }
-  }, [breakpoint])
+  }, [isMobile])
   useEffect(() => {
     setTimeout(() => {
       const containerHtml = containerRef.current as HTMLDivElement

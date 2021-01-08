@@ -1,4 +1,3 @@
-import { transform } from 'framer-motion'
 import React from 'react'
 import { Box, Container, Flex, Heading, Link, Image, Text } from 'theme-ui'
 import { Logo } from '../Logo/Logo'

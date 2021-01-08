@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Box } from 'theme-ui'
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { Banner } from '../components/Banner/Banner'
 import { About } from '../components/About/About'
 import { Navbar } from '../components/Navbar/Navbar'
@@ -11,7 +11,7 @@ import { MyStory } from '../components/MyStory/MyStory'
 // markup
 const IndexPage = (): JSX.Element => {
   return (
-    <main>
+    <main sx={{ overflow: 'hidden' }}>
       <Helmet>
         <meta charSet="UTF-8" />
         <html lang="en" />
@@ -43,7 +43,7 @@ const IndexPage = (): JSX.Element => {
         <meta name="theme-color" content="#2ec4b6" />
 
         <link
-          href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+          href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css"
           rel="stylesheet"
         />
       </Helmet>

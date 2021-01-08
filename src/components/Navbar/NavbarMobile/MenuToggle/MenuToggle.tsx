@@ -19,6 +19,7 @@ export const MenuToggle: FunctionComponent<MenuToggleProps> = ({
         outline: 'none',
         borderRadius: '50%',
         p: 0,
+        display: 'flex',
       }}
     >
       <svg width="32" height="32" viewBox="0 0 23 23">

@@ -1,14 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { Box } from 'theme-ui'
+/** @jsx jsx */
+import { useCallback, useEffect, useState } from 'react'
+import { jsx, Box } from 'theme-ui'
 import { NavbarDesktop } from './NavbarDesktop/NavbarDesktop'
-import { useBreakpointIndex } from '@theme-ui/match-media'
 import { NavbarMobile } from './NavbarMobile/NavbarMobile'
 import { NavbarContext } from './NavbarContext'
+import MediaQuery from 'react-responsive'
+import theme from '../../gatsby-plugin-theme-ui'
 
 export const Navbar = (): JSX.Element => {
   const [lightNav, setLightNav] = useState(false)
-  const breakpoint = useBreakpointIndex({ defaultIndex: 2 })
   const defaultValues = { lightNav }
+
+  const [media, setMedia] = useState(-1)
 
   const updateLightNav = useCallback(() => {
     const bannerId = document.getElementById('banner')
@@ -45,7 +48,12 @@ export const Navbar = (): JSX.Element => {
           bg: lightNav ? 'background' : 'transparent',
         }}
       >
-        {breakpoint > 1 ? <NavbarDesktop /> : <NavbarMobile />}
+        <MediaQuery query={`(max-width: ${theme.breakpoints[1]})`}>
+          <NavbarMobile />
+        </MediaQuery>
+        <MediaQuery query={`(min-width: ${theme.breakpoints[1]})`}>
+          <NavbarDesktop />
+        </MediaQuery>
       </Box>
     </NavbarContext.Provider>
   )
