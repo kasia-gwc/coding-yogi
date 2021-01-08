@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import { Text, Heading, Container, Grid, Image, Box } from 'theme-ui'
-// import { Carousel } from '../Carousel/Carousel'
+import { Text, Heading, Container, Image, Box } from 'theme-ui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import Img from 'gatsby-image'
+import { graphql, StaticQuery } from 'gatsby'
 
 export const About = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -21,7 +22,7 @@ export const About = (): JSX.Element => {
         scrollTrigger: {
           trigger: containerHTML, //it's where we begin the trigger in the view
           start: 'top 80%',
-          // once: true,
+          once: true,
         },
       })
       tl.fromTo(heading, { autoAlpha: 0, x: '-10%' }, { autoAlpha: 1, x: '0%' })
@@ -91,17 +92,34 @@ export const About = (): JSX.Element => {
           </Text>
         </Box>
       </Box>
-      <Image
-        src="/image/GY-min.jpg"
+      <Box
+        sx={{ mr: 'auto', maxWidth: 650, width: '100%', height: '100%' }}
         className="about-picture"
-        sx={{
-          maxWidth: '650px',
-          width: '100%',
-          mr: 'auto',
-        }}
       >
-        {/* <Carousel /> */}
-      </Image>
+        <StaticQuery
+          query={graphql`
+            {
+              file(relativePath: { eq: "GY-min.jpg" }) {
+                childImageSharp {
+                  fluid(quality: 80) {
+                    tracedSVG
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                  }
+                }
+              }
+            }
+          `}
+          render={(data) => (
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              style={{ width: '100%', height: '100%' }}
+            />
+          )}
+        />
+      </Box>
     </Container>
   )
 }

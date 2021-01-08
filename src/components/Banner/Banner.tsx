@@ -1,5 +1,7 @@
 import React from 'react'
 import { Box, Image, Flex, Heading } from 'theme-ui'
+import Img from 'gatsby-image'
+import { StaticQuery, graphql } from 'gatsby'
 
 export const Banner = (): JSX.Element => {
   return (
@@ -19,15 +21,30 @@ export const Banner = (): JSX.Element => {
         },
       }}
     >
-      <Image
-        src="/image/desert.jpg"
-        sx={{
-          height: '100%',
-          width: '100%',
-          objectFit: 'cover',
-          objectPosition: ['26% 0%', '0% 40%'],
-        }}
-      ></Image>
+      <StaticQuery
+        query={graphql`
+          {
+            file(relativePath: { eq: "desert.jpg" }) {
+              childImageSharp {
+                fluid(quality: 80) {
+                  tracedSVG
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                }
+              }
+            }
+          }
+        `}
+        render={(data) => (
+          <Img
+            fluid={data.file.childImageSharp.fluid}
+            style={{ height: '100%', width: '100%' }}
+          />
+        )}
+      />
+
       <Box
         sx={{
           position: 'absolute',
