@@ -147,7 +147,7 @@ export const Footer = (): JSX.Element => {
           <Logo variant="dark" />
         </Box>
       </Flex>
-      <Text sx={{ fontSize: '0.9rem', mb: 1 }}>Created with 🕉 by Kasia</Text>
+      <Text sx={{ fontSize: '1rem', mb: 1 }}>Created with 🖤 by Kasia</Text>
     </Container>
   )
 }
