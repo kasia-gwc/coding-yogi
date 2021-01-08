@@ -84,9 +84,10 @@ export const About = (): JSX.Element => {
             into web development.
           </Text>
           <Text as="p" variant="styles.p">
-            Welcome to my space. I invite you to have a look at the projects I 
-            delivered during last summer bootcamp at Le Wagon. The page you're visiting is my first frontend baby.
-           If you like what you see, feel free to contact me on the section below.
+            Welcome to my space. I invite you to have a look at the projects I
+            delivered during last summer bootcamp at Le Wagon. The page you are
+            visiting is my first frontend baby. If you like what you see, feel
+            free to contact me on the section below.
           </Text>
         </Box>
       </Box>
