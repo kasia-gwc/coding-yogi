@@ -89,9 +89,8 @@ export const Footer = (): JSX.Element => {
           ))}
         </Flex>
         <Box
-          as="h3"
-          variant="styles.h3"
           sx={{
+            fontSize: '2rem',
             color: 'text',
             fontWeight: 'body',
             justifyContent: 'center',
