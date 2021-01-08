@@ -108,6 +108,7 @@ export const ProjectBox: FunctionComponent<
               variant="styles.p"
               sx={{
                 color: 'white',
+                display: ['none', 'block'],
                 opacity: [1, null, 0],
                 visibility: ['visible', null, 'hidden'],
                 transition: 'opacity 0.4s 0.4s, transform 0.4s 0.4s',
