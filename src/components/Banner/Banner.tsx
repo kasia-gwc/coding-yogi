@@ -1,9 +1,14 @@
 import React from 'react'
-import { Box, Image, Flex, Heading } from 'theme-ui'
-import Img from 'gatsby-image'
+import { Box, Flex, Heading } from 'theme-ui'
+import Img from 'gatsby-image/withIEPolyfill'
 import { StaticQuery, graphql } from 'gatsby'
+import { useMediaQuery } from 'react-responsive'
+import theme from '../../gatsby-plugin-theme-ui'
 
 export const Banner = (): JSX.Element => {
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${theme.breakpoints[1]})`,
+  })
   return (
     <Flex
       id="banner"
@@ -40,7 +45,12 @@ export const Banner = (): JSX.Element => {
         render={(data) => (
           <Img
             fluid={data.file.childImageSharp.fluid}
-            style={{ height: '100%', width: '100%' }}
+            objectFit="cover"
+            objectPosition={isMobile ? '26% 0%' : '0% 44%'}
+            style={{
+              height: '100%',
+              width: '100%',
+            }}
           />
         )}
       />
