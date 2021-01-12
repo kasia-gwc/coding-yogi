@@ -25,7 +25,7 @@ export const itemsList: ProjectProps[] = [
   },
   {
     title: 'Wehicle',
-    description: 'A marketplace to rend and lend any vehicles you dream of.',
+    description: 'A marketplace to rent and lend the vehicles of your dream.',
     image: '/image/wehicle.jpg',
     url: 'https://wehicle.herokuapp.com',
     technologies: ['RoR', 'HTML', 'CSS', 'JS', 'HEROKU'],
