@@ -76,13 +76,12 @@ export const About = (): JSX.Element => {
             marginBottom: 5,
           }}
         >
-          {/* <Text as="p" variant="styles.p">
-            Hello, you!
-          </Text> */}
           <Text as="p" variant="styles.p">
-            Thanks for dropping by! I’m Kasia - psychology graduate & people
-            person, avid traveller & yoga teacher, currently shifting my career
-            into web development.
+            Thanks for dropping by!
+          </Text>
+          <Text as="p" variant="styles.p">
+            I’m Kasia - psychology graduate & people person, avid traveller &
+            yoga teacher, currently shifting my career into web development.
           </Text>
           <Text as="p" variant="styles.p">
             Welcome to my space. I invite you to have a look at the projects I
