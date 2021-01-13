@@ -5,7 +5,12 @@ export const menuItems = [
     cName: 'nav-links',
   },
   {
-    title: 'projects & skills',
+    title: 'skills',
+    url: '#skills',
+    cName: 'nav-links',
+  },
+  {
+    title: 'projects',
     url: '#portfolio',
     cName: 'nav-links',
   },
