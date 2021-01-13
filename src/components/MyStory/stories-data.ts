@@ -61,7 +61,7 @@ export const stories = [
   {
     title: 'Germany 🇩🇪',
     description:
-      '...Yoga carried me throughout 2020 and gave me the motivation to sit and learn coding during lockdown. I then found Le Wagon and in a few months became a <b>coding yogi</b>!',
+      '...is where yoga carried me throughout the lockdown and gave me the motivation to sit and learn coding meanwhile. I then found Le Wagon and in a few months became a <b>coding yogi</b>!',
     image: '/image/petals/petal-7.png',
     pin: {
       lng: 52.17,

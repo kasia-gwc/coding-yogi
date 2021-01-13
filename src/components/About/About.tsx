@@ -65,7 +65,7 @@ export const About = (): JSX.Element => {
             fontSize: ['80px', '125px'],
           }}
         >
-          about me
+          Hello, you
         </Heading>
         <Box
           className="about-content"
@@ -76,9 +76,9 @@ export const About = (): JSX.Element => {
             marginBottom: 5,
           }}
         >
-          <Text as="p" variant="styles.p">
+          {/* <Text as="p" variant="styles.p">
             Hello, you!
-          </Text>
+          </Text> */}
           <Text as="p" variant="styles.p">
             Thanks for dropping by! I’m Kasia - psychology graduate & people
             person, avid traveller & yoga teacher, currently shifting my career
