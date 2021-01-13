@@ -7,6 +7,7 @@ import { Footer } from '../components/Footer/Footer'
 import { Portfolio } from '../components/Portfolio/Portfolio'
 import { Helmet } from 'react-helmet'
 import { MyStory } from '../components/MyStory/MyStory'
+import { Skills } from '../components/Skills/Skills'
 
 // markup
 const IndexPage = (): JSX.Element => {
@@ -50,6 +51,7 @@ const IndexPage = (): JSX.Element => {
       <Navbar />
       <Banner />
       <About />
+      <Skills />
       <Portfolio />
       <MyStory />
       <Footer />

@@ -26,7 +26,7 @@ export const Logo: FunctionComponent<LogoProps> = ({
       }}
     >
       <svg
-        sx={{ height: 'auto', width: 80 }}
+        sx={{ height: '100%', width: 80 }}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 106 56"
