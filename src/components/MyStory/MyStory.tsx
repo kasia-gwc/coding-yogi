@@ -189,7 +189,7 @@ export const MyStory = (): JSX.Element => {
         <Box
           ref={mapRefEl}
           id="map"
-          sx={{ height: ['calc(100vh * 0.45)', '100vh'], width: '100%' }}
+          sx={{ height: ['calc(100vh * 0.40)', '100vh'], width: '100%' }}
         />
       </Box>
       {stories.map(({ title, description, image, pin }, index) => (
