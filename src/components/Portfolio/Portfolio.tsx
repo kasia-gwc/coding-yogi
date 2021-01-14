@@ -80,7 +80,7 @@ export const Portfolio = (): JSX.Element => {
         as="h3"
         variant="styles.h3"
         sx={{
-          color: 'secondary',
+          color: 'primary',
           textAlign: 'right',
           mb: 5,
           fontSize: ['80px', '125px'],

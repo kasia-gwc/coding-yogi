@@ -189,7 +189,7 @@ export const MyStory = (): JSX.Element => {
         <Box
           ref={mapRefEl}
           id="map"
-          sx={{ height: ['calc(100vh * 0.3)', '100vh'], width: '100%' }}
+          sx={{ height: ['calc(100vh * 0.4)', '100vh'], width: '100%' }}
         />
       </Box>
       {stories.map(({ title, description, image, pin }, index) => (
@@ -215,7 +215,7 @@ export const MyStory = (): JSX.Element => {
               id="heading"
               variant="styles.h3"
               sx={{
-                color: 'primary',
+                color: 'secondary',
                 position: 'absolute',
                 textAlign: ['center', 'left'],
                 top: '0',

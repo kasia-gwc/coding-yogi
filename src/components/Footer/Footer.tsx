@@ -16,7 +16,7 @@ export const Footer = (): JSX.Element => {
       >
         <Heading
           sx={{
-            color: 'secondary',
+            color: 'primary',
             textAlign: 'center',
             mb: '20px',
             mt: '40px',
