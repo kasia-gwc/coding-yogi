@@ -175,7 +175,7 @@ export const MyStory = (): JSX.Element => {
     >
       <Box
         sx={{
-          height: ['calc(100vh * 0.3)', '100vh'],
+          height: ['calc(100vh * 0.4)', '100vh'],
           position: 'absolute',
           width: ['100%', '40%'],
           right: 0,
