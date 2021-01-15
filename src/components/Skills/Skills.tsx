@@ -1,12 +1,51 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useRef } from 'react'
 import { Container, Grid, Heading, Text, Box } from 'theme-ui'
 import { skillsItems } from './skillsItems'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 export const Skills = (): JSX.Element => {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const containerHTML = containerRef.current as HTMLDivElement
+    const heading = containerHTML.querySelector('#heading')
+    const department = containerHTML.querySelectorAll('.department')
+    const tech = containerHTML.querySelectorAll('.tech')
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerHTML,
+        start: 'top 80%',
+      },
+    })
+    tl.fromTo(heading, { autoAlpha: 0, x: '10%' }, { autoAlpha: 1, x: '0%' })
+    tl.add(
+      gsap.to(
+        department,
+        {
+          autoAlpha: 1,
+          x: '10%',
+          stagger: 0.2,
+        },
+        { autoAlpha: 0, x: '0%', stagger: 0.2 }
+      )
+    ).add(
+      gsap.to(
+        tech,
+        {
+          autoAlpha: 1,
+          x: '10%',
+          stagger: 0.2,
+        },
+        { autoAlpha: 0, x: '0%', stagger: 0.2 }
+      )
+    )
+  }, [])
   return (
-    <Container id="skills">
+    <Container id="skills" ref={containerRef}>
       <Heading
         id="heading"
         sx={{
@@ -21,6 +60,7 @@ export const Skills = (): JSX.Element => {
         skills
       </Heading>
       <Grid
+        className="technologies"
         sx={{
           gridTemplateColumns: ['1fr', '58% 1fr'],
           width: '100%',
@@ -33,7 +73,7 @@ export const Skills = (): JSX.Element => {
         {skillsItems.map((department) => {
           return (
             <Fragment key={department.title}>
-              <Box sx={{ width: '100%' }}>
+              <Box className="department" sx={{ width: '100%' }}>
                 <Text
                   sx={{
                     fontSize: ['2rem', '3rem', '4rem'],
@@ -48,6 +88,7 @@ export const Skills = (): JSX.Element => {
                 </Text>
               </Box>
               <Box
+                className="tech"
                 sx={{
                   display: 'flex',
                   fontSize: '1.2rem',
