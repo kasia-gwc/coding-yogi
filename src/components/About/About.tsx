@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Text, Heading, Container, Image, Box } from 'theme-ui'
+import { Text, Heading, Container, Box } from 'theme-ui'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
