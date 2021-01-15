@@ -23,24 +23,24 @@ export const Skills = (): JSX.Element => {
     })
     tl.fromTo(heading, { autoAlpha: 0, x: '20%' }, { autoAlpha: 1, x: '0%' })
     tl.add(
-      gsap.to(
+      gsap.fromTo(
         department,
         {
-          autoAlpha: 1,
+          autoAlpha: 0,
           x: '-10%',
-          stagger: 0.2
         },
-        { autoAlpha: 0, x: '10%', stagger: 0.2 }
+        { autoAlpha: 1, x: '0%', stagger: 0.2 }
       )
     ).add(
-      gsap.to(
+      gsap.fromTo(
         tech,
         {
-          autoAlpha: 1,
-          x: '-10%',
+          autoAlpha: 0,
+          x: '10%',
         },
-        { autoAlpha: 0, x: '10%', stagger: 0.2 }
-      )
+        { autoAlpha: 1, x: '0%', stagger: 0.2 }
+      ),
+      '-=0.5'
     )
   }, [])
   return (
