@@ -8,6 +8,7 @@ import { Portfolio } from '../components/Portfolio/Portfolio'
 import { Helmet } from 'react-helmet'
 import { MyStory } from '../components/MyStory/MyStory'
 import { Skills } from '../components/Skills/Skills'
+import { Projects } from '../components/Projects/Projects'
 
 // markup
 const IndexPage = (): JSX.Element => {
@@ -52,7 +53,7 @@ const IndexPage = (): JSX.Element => {
       <Banner />
       <About />
       <Skills />
-      <Portfolio />
+      <Projects />
       <MyStory />
       <Footer />
     </main>

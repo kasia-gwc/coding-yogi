@@ -63,7 +63,6 @@ export const Skills = (): JSX.Element => {
         sx={{
           gridTemplateColumns: ['1fr', '58% 1fr'],
           width: '100%',
-          height: '50vh',
           textAlign: 'center',
           alignItems: 'center',
           gap: '1rem',
@@ -77,9 +76,9 @@ export const Skills = (): JSX.Element => {
                   sx={{
                     fontSize: ['2rem', '3rem', '4rem'],
                     textAlign: 'right',
-                    lineHeight: ['1.5rem', '1.5rem'],
+                    lineHeight: 1,
+                    display: 'block',
                     mr: 3,
-                    mb: 3,
                   }}
                   key={department.title}
                 >
