@@ -100,7 +100,7 @@ export const Projects = (): JSX.Element => {
                     backgroundColor: 'white',
                     position: 'absolute',
                     border: '0.5px solid',
-                    borderColor: 'black',
+                    borderColor: 'gray',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
