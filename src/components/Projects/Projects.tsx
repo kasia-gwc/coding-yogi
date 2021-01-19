@@ -99,7 +99,7 @@ export const Projects = (): JSX.Element => {
                     height: ['250px', '430px'],
                     backgroundColor: 'white',
                     position: 'absolute',
-                    border: '0.8px solid',
+                    border: '0.5px solid',
                     borderColor: 'black',
                     display: 'flex',
                     alignItems: 'center',
@@ -118,7 +118,7 @@ export const Projects = (): JSX.Element => {
                       opacity: 0,
                       position: 'absolute',
                       fontWeight: 'body',
-                      color: 'black',
+                      color: 'primary',
                     }}
                   >
                     {project.title}
