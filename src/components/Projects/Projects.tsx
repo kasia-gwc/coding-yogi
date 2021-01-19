@@ -5,7 +5,6 @@ import { Box, Container, Grid, Heading, Image, Text, Link } from 'theme-ui'
 import { itemsList } from '../Portfolio/itemsList'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { transform } from 'framer-motion'
 gsap.registerPlugin(ScrollTrigger)
 
 export const Projects = (): JSX.Element => {
@@ -35,7 +34,7 @@ export const Projects = (): JSX.Element => {
     )
   }, [])
   return (
-    <Container ref={containerRef}>
+    <Container ref={containerRef} sx={{ mb: 5 }}>
       <Heading
         id="heading"
         as="h3"
@@ -57,6 +56,7 @@ export const Projects = (): JSX.Element => {
           width: '100%',
           gridTemplateColumns: ['1fr', '1fr 1fr'],
           gap: '3rem',
+          justifyItems: 'center',
         }}
       >
         {itemsList.map((project, index) => {
