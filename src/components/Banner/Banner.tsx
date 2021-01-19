@@ -31,7 +31,7 @@ export const Banner = (): JSX.Element => {
           {
             file(relativePath: { eq: "desert.jpg" }) {
               childImageSharp {
-                fluid(quality: 80) {
+                fluid(quality: 100) {
                   tracedSVG
                   aspectRatio
                   src

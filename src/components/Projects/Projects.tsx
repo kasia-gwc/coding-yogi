@@ -60,6 +60,7 @@ export const Projects = (): JSX.Element => {
         }}
       >
         {itemsList.map((project, index) => {
+          const isNotFirstChild = index > 0
           return (
             <Box
               className="project"
@@ -67,7 +68,15 @@ export const Projects = (): JSX.Element => {
               sx={{
                 gridRow: ['initial', index + 1],
                 gridColumn: ['initial', (index + 1) % 2 === 0 ? 2 : 1],
-                mt: ['initial', index > 0 ? '-40%' : '0%'],
+                maxWidth: ['100%', 350, 500],
+                height: 300,
+                width: '100%',
+                mt: [
+                  'initial',
+                  isNotFirstChild ? '-40%' : '0%',
+                  isNotFirstChild ? '-30%' : '0%',
+                  isNotFirstChild ? '-20%' : '0%',
+                ],
                 position: 'relative',
                 '&:hover': {
                   '.white-box': {
@@ -86,17 +95,16 @@ export const Projects = (): JSX.Element => {
                   className="projectBox"
                   src={project.image}
                   sx={{
-                    width: ['250px', '430px'],
                     objectFit: 'cover',
-                    height: ['250px', '430px'],
+                    width: '100%',
+                    height: '100%',
                   }}
                 ></Image>
                 <Box
                   className="white-box"
                   sx={{
-                    width: ['250px', '430px'],
-                    objectFit: 'cover',
-                    height: ['250px', '430px'],
+                    width: '100%',
+                    height: '100%',
                     backgroundColor: 'white',
                     position: 'absolute',
                     border: '0.5px solid',
