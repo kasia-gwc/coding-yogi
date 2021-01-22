@@ -14,6 +14,48 @@ export const Footer = (): JSX.Element => {
           width: '100%',
         }}
       >
+        <Box>
+          <Heading
+            as="h3"
+            variant="styles.h3"
+            sx={{
+              color: 'secondary',
+              textAlign: 'center',
+              mb: '30px',
+              fontWeight: 'body',
+              transition: '0.3s',
+            }}
+          >
+            Join my yoga classes at{' '}
+            <Link
+              href={greenyoga.url}
+              target="_blank"
+              sx={{
+                textDecoration: 'none',
+                display: 'inline-block',
+                fontWeight: 'heading',
+                transition: 'transform .2s',
+                fontSize: 'inherit',
+                '&:hover': {
+                  transform: 'scale(1.1)',
+                },
+              }}
+            >
+              Green Yoga
+            </Link>
+          </Heading>
+          <Box
+            sx={{
+              fontSize: '2rem',
+              color: 'text',
+              fontWeight: 'body',
+              justifyContent: 'center',
+              display: 'flex',
+            }}
+          >
+            &
+          </Box>
+        </Box>
         <Heading
           sx={{
             color: 'primary',
@@ -87,49 +129,6 @@ export const Footer = (): JSX.Element => {
             </Box>
           ))}
         </Flex>
-        <Box
-          sx={{
-            fontSize: '2rem',
-            color: 'text',
-            fontWeight: 'body',
-            justifyContent: 'center',
-            display: 'flex',
-            mb: '20px',
-          }}
-        >
-          &
-        </Box>
-        <Box>
-          <Heading
-            as="h3"
-            variant="styles.h3"
-            sx={{
-              color: 'secondary',
-              textAlign: 'center',
-              mb: '30px',
-              fontWeight: 'body',
-              transition: '0.3s',
-            }}
-          >
-            join my yoga classes at{' '}
-            <Link
-              href={greenyoga.url}
-              target="_blank"
-              sx={{
-                textDecoration: 'none',
-                display: 'inline-block',
-                fontWeight: 'heading',
-                transition: 'transform .2s',
-                fontSize: 'inherit',
-                '&:hover': {
-                  transform: 'scale(1.1)',
-                },
-              }}
-            >
-              Green Yoga
-            </Link>
-          </Heading>
-        </Box>
 
         <Box
           sx={{

@@ -74,7 +74,7 @@ export const Skills = (): JSX.Element => {
               <Box className="department" sx={{ width: '100%' }}>
                 <Text
                   sx={{
-                    fontSize: ['2rem', '3rem', '4rem'],
+                    fontSize: ['2rem', '3rem', '3.5rem'],
                     textAlign: 'right',
                     lineHeight: 1,
                     display: 'block',

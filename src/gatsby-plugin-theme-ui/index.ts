@@ -27,7 +27,7 @@ const theme = {
   ],
   fontWeights: {
     body: 200,
-    heading: 400,
+    heading: 200,
     bold: 400,
   },
   lineHeights: {

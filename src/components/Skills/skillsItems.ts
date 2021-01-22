@@ -1,7 +1,15 @@
 export const skillsItems = [
   {
     title: 'frontend',
-    skills: ['TypeScript', 'CSS', 'HTML', 'React', 'JEST', 'Parcel'],
+    skills: [
+      'JavaScript',
+      'TypeScript',
+      'CSS',
+      'HTML',
+      'React',
+      'JEST',
+      'Parcel',
+    ],
   },
   {
     title: 'backend & hosting',

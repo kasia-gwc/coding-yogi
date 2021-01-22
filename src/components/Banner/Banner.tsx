@@ -44,6 +44,7 @@ export const Banner = (): JSX.Element => {
         `}
         render={(data) => (
           <Img
+            alt="Kasia in the desert"
             fluid={data.file.childImageSharp.fluid}
             objectFit="cover"
             objectPosition={isMobile ? '26% 0%' : '0% 44%'}

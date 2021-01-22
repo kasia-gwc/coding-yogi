@@ -355,6 +355,20 @@ template {
   font-size: 20px;
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: #cbcbd1;
+  border-radius: 16px;
+  border: 4px solid #fff;
+}
+::-webkit-scrollbar,
+::-webkit-scrollbar-track:vertical {
+  background-color: #fbfbfc;
+}
+::-webkit-scrollbar {
+  background-color: #fff;
+  width: 16px;
+}
+
 @media (min-width: 525px) {
   :root {
     font-size: calc(1rem + ((1vw - 5.25px) * 0.2867));

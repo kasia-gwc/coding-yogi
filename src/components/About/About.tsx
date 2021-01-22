@@ -113,6 +113,7 @@ export const About = (): JSX.Element => {
           `}
           render={(data) => (
             <Img
+              alt="Kasia's picture"
               fluid={data.file.childImageSharp.fluid}
               style={{ width: '100%', height: '100%' }}
             />

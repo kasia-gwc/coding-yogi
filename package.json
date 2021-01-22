@@ -17,6 +17,7 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "contentful": "^8.1.7",
     "framer-motion": "^3.1.1",
     "gatsby": "^2.30.1",
     "gatsby-image": "^2.9.0",
@@ -25,6 +26,7 @@
     "gatsby-plugin-react-helmet": "^3.8.0",
     "gatsby-plugin-sitemap": "^2.10.0",
     "gatsby-plugin-theme-ui": "^0.3.5",
+    "gatsby-source-contentful": "^4.5.1",
     "gatsby-source-filesystem": "^2.9.0",
     "gsap": "^3.5.1",
     "mapbox-gl": "1.13.0",

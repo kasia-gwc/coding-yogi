@@ -34,7 +34,7 @@ export const Projects = (): JSX.Element => {
     )
   }, [])
   return (
-    <Container ref={containerRef} sx={{ mb: 5 }}>
+    <Container id="projects" ref={containerRef} sx={{ mb: 5 }}>
       <Heading
         id="heading"
         as="h3"
@@ -57,9 +57,11 @@ export const Projects = (): JSX.Element => {
           gridTemplateColumns: ['1fr', '1fr 1fr'],
           gap: '3rem',
           justifyItems: 'center',
+          textAlign: 'center',
         }}
       >
         {itemsList.map((project, index) => {
+          const isNotFirstChild = index > 0
           return (
             <Box
               className="project"
@@ -67,8 +69,15 @@ export const Projects = (): JSX.Element => {
               sx={{
                 gridRow: ['initial', index + 1],
                 gridColumn: ['initial', (index + 1) % 2 === 0 ? 2 : 1],
-                mt: ['initial', index > 0 ? '-40%' : '0%'],
+                mt: [
+                  'initial',
+                  isNotFirstChild ? '-40%' : '0%',
+                  isNotFirstChild ? '-30%' : '0%',
+                  isNotFirstChild ? '-20%' : '0%',
+                ],
                 position: 'relative',
+                maxWidth: ['100%', 350, 500],
+                height: 330,
                 '&:hover': {
                   '.white-box': {
                     opacity: 1,
@@ -86,22 +95,22 @@ export const Projects = (): JSX.Element => {
                   className="projectBox"
                   src={project.image}
                   sx={{
-                    width: ['250px', '430px'],
+                    width: '100%',
+                    height: '100%',
                     objectFit: 'cover',
-                    height: ['250px', '430px'],
                   }}
                 ></Image>
                 <Box
                   className="white-box"
                   sx={{
-                    width: ['250px', '430px'],
-                    objectFit: 'cover',
-                    height: ['250px', '430px'],
+                    width: '100%',
+                    height: '100%',
                     backgroundColor: 'white',
                     position: 'absolute',
                     border: '0.5px solid',
                     borderColor: 'gray',
                     display: 'flex',
+                    flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
                     top: 0,
@@ -116,12 +125,22 @@ export const Projects = (): JSX.Element => {
                     className="project-title"
                     sx={{
                       opacity: 0,
-                      position: 'absolute',
+                      whiteSpace: 'nowrap',
                       fontWeight: 'body',
                       color: 'primary',
                     }}
                   >
                     {project.title}
+                  </Text>
+
+                  <Text
+                    sx={{
+                      fontSize: '1.2rem',
+                      color: 'black',
+                      display: 'block',
+                    }}
+                  >
+                    {project.description}
                   </Text>
                 </Box>
               </Link>

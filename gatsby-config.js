@@ -13,6 +13,15 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-theme-ui',
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: '6hgunsiv77we',
+        accessToken: 'wIVy_OOVC1g7AaxR6P2U3aeVvIpXjWLhHxZ99TZAx50',
+        host: `preview.contentful.com`,
+        downloadLocal: true,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
