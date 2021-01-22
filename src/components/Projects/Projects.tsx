@@ -108,7 +108,7 @@ export const Projects = (): JSX.Element => {
                     backgroundColor: 'white',
                     position: 'absolute',
                     border: '0.5px solid',
-                    borderColor: 'gray',
+                    borderColor: '#b5b5b5',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -128,6 +128,7 @@ export const Projects = (): JSX.Element => {
                       whiteSpace: 'nowrap',
                       fontWeight: 'body',
                       color: 'primary',
+                      mb: 3,
                     }}
                   >
                     {project.title}
