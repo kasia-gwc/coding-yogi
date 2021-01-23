@@ -82,6 +82,12 @@ export const MyStory = (): JSX.Element => {
         if (mapRef.current) {
           new mapboxgl.Marker(el)
             .setLngLat([story.pin.lat, story.pin.lng])
+            .setPopup(
+              new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML(
+                  '<h3>' + story.title + '</h3><p>' + story.description + '</p>'
+                )
+            )
             .addTo(mapRef.current)
         }
       })

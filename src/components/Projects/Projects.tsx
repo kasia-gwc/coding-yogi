@@ -93,6 +93,7 @@ export const Projects = (): JSX.Element => {
               <Link href={project.url} target="_blank">
                 <Image
                   className="projectBox"
+                  alt="Project image"
                   src={project.image}
                   sx={{
                     width: '100%',
