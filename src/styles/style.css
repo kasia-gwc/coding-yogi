@@ -392,10 +392,13 @@ template {
 text-align: center;
 font-family: Josefin Sans;
 font-weight: 200;
-font-size: 15px;
+font-size: 15pxas78[p];
 }
 
 .mapboxgl-popup-close-button {
 font-weight: 200;
 font-size: 30px;
+}
+.mapboxgl-popup-content .img {
+  max-width: 150px;
 }
