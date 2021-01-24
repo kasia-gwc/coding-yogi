@@ -23,7 +23,7 @@ export const stories = [
   },
   {
     title: 'Vietnam 🇻🇳',
-    picture: '/image/stories/vietnam1.jpg',
+    picture: '/image/stories/vietnam1.png',
     description:
       '...taught me in three months how to drive a moped, appreciate simplicity of life and transformed me into a vegetarian!',
     image: '/image/petals/petal-3.png',
