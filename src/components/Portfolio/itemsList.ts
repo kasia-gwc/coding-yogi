@@ -6,7 +6,7 @@ export const itemsList: ProjectProps[] = [
     description:
       'Interactive webapp to create watch lists and get crafted recommendations based on the history and favourites.',
     image: '/image/watchbuddy.jpeg',
-    url: 'https://watchbuddy385.herokuapp.com/',
+    url: 'http://www.watchbuddy.club/',
     technologies: ['RoR', 'HTML', 'CSS', 'PostgreSQL', 'JS', 'HEROKU'],
   },
   {

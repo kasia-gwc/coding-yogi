@@ -82,6 +82,10 @@ export const MyStory = (): JSX.Element => {
         if (mapRef.current) {
           new mapboxgl.Marker(el)
             .setLngLat([story.pin.lat, story.pin.lng])
+            .setPopup(
+              new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML(`<img class="img" src="${story.picture}"/>`)
+            )
             .addTo(mapRef.current)
         }
       })

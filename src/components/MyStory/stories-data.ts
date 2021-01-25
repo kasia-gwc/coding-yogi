@@ -1,6 +1,7 @@
 export const stories = [
   {
     title: 'Poland 🇵🇱',
+    picture: '/image/stories/polska1.jpg',
     description:
       'Everything started here - my education, first professional experience, my passion for yoga and travels.',
     image: '/image/petals/petal-1.png',
@@ -11,6 +12,7 @@ export const stories = [
   },
   {
     title: 'China 🇨🇳',
+    picture: '/image/stories/china1.png',
     description:
       '... is where I booked my first one-way solo trip to volunteer in an environmental project cleaning the ocean and to teach English Chinese children.',
     image: '/image/petals/petal-2.png',
@@ -21,6 +23,7 @@ export const stories = [
   },
   {
     title: 'Vietnam 🇻🇳',
+    picture: '/image/stories/vietnam1.png',
     description:
       '...taught me in three months how to drive a moped, appreciate simplicity of life and transformed me into a vegetarian!',
     image: '/image/petals/petal-3.png',
@@ -31,6 +34,7 @@ export const stories = [
   },
   {
     title: 'India 🇮🇳',
+    picture: '/image/stories/india1.jpg',
     description:
       '...called me back to my career path of a people person after a few months of teaching English, and showed me some of the most beautiful places I have ever seen!',
     image: '/image/petals/petal-4.png',
@@ -41,6 +45,7 @@ export const stories = [
   },
   {
     title: 'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+    picture: '/image/stories/london1.jpg',
     description: `...gave me the best startup experience in a fintech scene and taught me a lot about what makes a great company's culture`,
     image: '/image/petals/petal-5.png',
     pin: {
@@ -50,6 +55,7 @@ export const stories = [
   },
   {
     title: 'India 🇮🇳',
+    picture: '/image/stories/india2.jpg',
     description:
       '...called me home again to learn yoga at the source and become certified yoga teacher. What a remarkable start to this unforgettable 2020!',
     image: '/image/petals/petal-6.png',
@@ -60,6 +66,7 @@ export const stories = [
   },
   {
     title: 'Germany 🇩🇪',
+    picture: '/image/stories/berlin1.jpeg',
     description:
       '...is where yoga carried me throughout the lockdown and gave me the motivation to sit and learn coding meanwhile. I then found Le Wagon and in a few months became a <b>coding yogi</b>!',
     image: '/image/petals/petal-7.png',

@@ -66,7 +66,7 @@ const theme = {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
+      fontWeight: 'body',
       fontSize: [2, 3],
       mb: 4,
     },
@@ -133,7 +133,7 @@ const theme = {
     },
   },
   sizes: {
-    container: [1050, null, 1440],
+    container: 1050,
   },
   layout: {
     container: {

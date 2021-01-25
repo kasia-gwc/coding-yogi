@@ -5,8 +5,8 @@ module.exports = {
   siteMetadata: {
     title: 'Coding yogi',
     description: 'Coding yogi',
-    url: 'https://www.kash.com', // No trailing slash allowed!
-    siteUrl: 'https://www.kash.com',
+    url: 'https://www.kasiagawelko.me', // No trailing slash allowed!
+    siteUrl: 'https://www.kasiagawelko.me',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
