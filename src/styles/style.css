@@ -399,8 +399,10 @@ padding: 7px;
 .mapboxgl-popup-close-button {
 font-weight: 200;
 font-size: 30px;
-margin-right: 10px;
+margin-right: 5px;
 color: white;
+border-radius: 0%;
+background-color: transparent;
 }
 
 .mapboxgl-popup-content .img {

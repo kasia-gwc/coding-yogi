@@ -133,7 +133,7 @@ const theme = {
     },
   },
   sizes: {
-    container: [1050, null, 1440],
+    container: 1050,
   },
   layout: {
     container: {
