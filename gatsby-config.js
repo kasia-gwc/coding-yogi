@@ -4,7 +4,8 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: 'Coding yogi',
-    description: 'Coding yogi',
+    description:
+      'A short story and professional portfolio of a yogi traveler, who discovered passion for coding.',
     url: 'https://www.kasiagawelko.me', // No trailing slash allowed!
     siteUrl: 'https://www.kasiagawelko.me',
   },
