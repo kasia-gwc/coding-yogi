@@ -12,7 +12,7 @@ export const stories = [
   },
   {
     title: 'China 🇨🇳',
-    picture: '/image/stories/china1.png',
+    picture: '/image/stories/china2.jpg',
     description:
       '... is where I booked my first one-way solo trip to volunteer in an environmental project cleaning the ocean and to teach English Chinese children.',
     image: '/image/petals/petal-2.png',
@@ -34,7 +34,7 @@ export const stories = [
   },
   {
     title: 'India 🇮🇳',
-    picture: '/image/stories/india1.jpg',
+    picture: '/image/stories/1india.jpg',
     description:
       '...called me back to my career path of a people person after a few months of teaching English, and showed me some of the most beautiful places I have ever seen!',
     image: '/image/petals/petal-4.png',
@@ -55,7 +55,7 @@ export const stories = [
   },
   {
     title: 'India 🇮🇳',
-    picture: '/image/stories/india2.jpg',
+    picture: '/image/stories/2india.jpg',
     description:
       '...called me home again to learn yoga at the source and become certified yoga teacher. What a remarkable start to this unforgettable 2020!',
     image: '/image/petals/petal-6.png',
