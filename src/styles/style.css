@@ -386,6 +386,7 @@ template {
 
 .marker .mapboxgl-popup {
   max-width: 150px;
+  max-height: 170px;
 }
 
 .mapboxgl-popup-content {
@@ -407,4 +408,5 @@ background-color: transparent;
 
 .mapboxgl-popup-content .img {
   max-width: 150px;
+  max-height: 170px;
 }
