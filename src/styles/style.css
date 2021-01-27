@@ -382,6 +382,11 @@ template {
   }
 }
 
+@media (max-width: 40em) {
+  .mapboxgl-popup-close-button {
+    margin-right: 0;
+  }
+}
 /* Mapbox */
 
 .marker .mapboxgl-popup {
