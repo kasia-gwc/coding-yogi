@@ -34,8 +34,8 @@ export const About = (): JSX.Element => {
         )
         .fromTo(
           aboutPicture,
-          { autoAlpha: 0, y: '35%' },
-          { autoAlpha: 1, y: '0%' },
+          { autoAlpha: 0, x: '35%' },
+          { autoAlpha: 1, x: '0%' },
           0.5
         )
     }
