@@ -61,7 +61,7 @@ export const Footer = (): JSX.Element => {
             color: 'primary',
             textAlign: 'center',
             my: '20px',
-            fontSize: '4rem',
+            fontSize: ['3rem', '6.25rem'],
             fontWeight: 'body',
           }}
         >

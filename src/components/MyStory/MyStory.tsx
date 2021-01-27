@@ -99,7 +99,7 @@ export const MyStory = (): JSX.Element => {
           trigger: containerHtml, //we want the render to happen when it hits this div, the scroll takes over
           pin: true,
           start: 'top top', // we want the animation to start when the top of the element hist sthe top of the screen - 1st top is top of the div, 2nd is top of the screen
-          end: window.innerHeight * stories.length, // we specifying when the scrollTrigger should end - after all the stories
+          end: window.innerHeight * stories.length ** (isMobile ? 1.25 : 1.5), // we specifying when the scrollTrigger should end - after all the stories
           scrub: 1, //speed of the animation being slightly behind
           snap: {
             duration: {
