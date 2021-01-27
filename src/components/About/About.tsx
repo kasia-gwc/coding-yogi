@@ -83,6 +83,44 @@ export const About = (): JSX.Element => {
             I’m Kasia - psychology graduate & people person, avid traveller &
             yoga teacher, currently shifting my career into web development.
           </Text>
+        </Box>
+        <Box
+          sx={{ mr: 'auto', maxWidth: 650, width: '100%', height: '100%' }}
+          className="about-picture"
+        >
+          <StaticQuery
+            query={graphql`
+              {
+                file(relativePath: { eq: "about-min.jpg" }) {
+                  childImageSharp {
+                    fluid(quality: 80) {
+                      tracedSVG
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
+                  }
+                }
+              }
+            `}
+            render={(data) => (
+              <Img
+                alt="Kasia's picture"
+                fluid={data.file.childImageSharp.fluid}
+                style={{ width: '100%', height: '100%' }}
+              />
+            )}
+          />
+        </Box>
+        <Box
+          sx={{
+            maxWidth: ['100%', '550px'],
+            textAlign: 'left',
+            marginLeft: 'auto',
+            mt: 5,
+          }}
+        >
           <Text as="p" variant="styles.p">
             Welcome to my space. I invite you to have a look at the projects I
             delivered during bootcamp at Le Wagon last summer. The page you are
@@ -90,35 +128,6 @@ export const About = (): JSX.Element => {
             free to contact me in the section below.
           </Text>
         </Box>
-      </Box>
-      <Box
-        sx={{ mr: 'auto', maxWidth: 650, width: '100%', height: '100%' }}
-        className="about-picture"
-      >
-        <StaticQuery
-          query={graphql`
-            {
-              file(relativePath: { eq: "GY-min.jpg" }) {
-                childImageSharp {
-                  fluid(quality: 80) {
-                    tracedSVG
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
-                  }
-                }
-              }
-            }
-          `}
-          render={(data) => (
-            <Img
-              alt="Kasia's picture"
-              fluid={data.file.childImageSharp.fluid}
-              style={{ width: '100%', height: '100%' }}
-            />
-          )}
-        />
       </Box>
     </Container>
   )
