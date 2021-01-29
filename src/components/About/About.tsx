@@ -122,10 +122,10 @@ export const About = (): JSX.Element => {
           }}
         >
           <Text as="p" variant="styles.p">
-            Welcome to my space. I invite you to have a look at the projects I
-            delivered during bootcamp at Le Wagon last summer. The page you are
-            visiting is my first frontend baby. If you like what you see, feel
-            free to contact me in the section below.
+            Welcome to my space. I invite you to have a look at some of the
+            projects I worked on during bootcamp at Le Wagon last summer. The
+            page you are visiting is my first frontend baby. If you like what
+            you see, feel free to contact me in the section below.
           </Text>
         </Box>
       </Box>

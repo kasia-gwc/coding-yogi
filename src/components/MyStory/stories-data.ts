@@ -46,7 +46,7 @@ export const stories = [
   {
     title: 'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
     picture: '/image/stories/london1.jpg',
-    description: `...gave me the best startup experience in a fintech scene and taught me a lot about what makes a great company's culture`,
+    description: `...gave me the best startup experience in a fintech scene and taught me a lot about what makes a great company's culture.`,
     image: '/image/petals/petal-5.png',
     pin: {
       lng: 52,
