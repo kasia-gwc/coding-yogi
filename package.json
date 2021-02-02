@@ -2,13 +2,13 @@
   "name": "coding-yogi",
   "version": "1.0.0",
   "private": true,
-  "description": "My Gatsby site",
+  "description": "A short story and professional portfolio of a yogi traveler, who discovered passion for coding.",
   "author": "Kasia Gawelko",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -18,6 +18,7 @@
   "license": "0BSD",
   "dependencies": {
     "contentful": "^8.1.7",
+    "dotenv": "^8.2.0",
     "framer-motion": "^3.1.1",
     "gatsby": "^2.30.1",
     "gatsby-image": "^2.9.0",
