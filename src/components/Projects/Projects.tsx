@@ -77,7 +77,7 @@ export const Projects = (): JSX.Element => {
                 ],
                 position: 'relative',
                 maxWidth: ['100%', 350, 500],
-                height: 330,
+                height: [250, 330],
                 '&:hover': {
                   '.white-box': {
                     opacity: 1,
