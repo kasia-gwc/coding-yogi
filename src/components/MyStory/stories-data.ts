@@ -14,7 +14,7 @@ export const stories = [
     title: 'China 🇨🇳',
     picture: '/image/stories/china2.jpg',
     description:
-      '... is where I booked my first one-way solo trip to volunteer in an environmental project cleaning the ocean and to teach English Chinese children.',
+      '... is where I booked my first one-way solo trip to volunteer in an environmental project cleaning the ocean and to teach to English Chinese children.',
     image: '/image/petals/petal-2.png',
     pin: {
       lng: 31,
@@ -46,7 +46,7 @@ export const stories = [
   {
     title: 'England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
     picture: '/image/stories/london1.jpg',
-    description: `...gave me the best startup experience in a fintech scene and taught me a lot about what makes a great company's culture.`,
+    description: `...gave me the best startup experience in a fintech scene and taught me a lot about what makes a great company culture.`,
     image: '/image/petals/petal-5.png',
     pin: {
       lng: 52,
