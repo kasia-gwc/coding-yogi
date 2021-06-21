@@ -16,7 +16,7 @@ export const footerItems = [
   },
   {
     title: 'cv',
-    url: 'https://shrtco.de/zbniU',
+    url: 'https://shrtco.de/b6xxGT',
     image: '/image/contact-icons/pdf.svg',
   },
 ]
